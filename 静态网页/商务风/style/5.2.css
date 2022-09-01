@@ -6,38 +6,38 @@ body .header {
   left: 0;
   z-index: 9;
 }
-body .header .x-wrap {
+body .header .wrap {
   width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   padding: 15px 0;
 }
-body .header .x-wrap .logo {
+body .header .wrap .logo {
   float: left;
   margin-right: 90px;
 }
-body .header .x-wrap .menu {
+body .header .wrap .menu {
   float: left;
   overflow: hidden;
 }
-body .header .x-wrap .menu li {
+body .header .wrap .menu li {
   margin: 0 20px;
   float: left;
 }
-body .header .x-wrap .menu li a {
+body .header .wrap .menu li a {
   font-size: larger;
 }
-body .header .x-wrap .menu li:hover a {
+body .header .wrap .menu li:hover a {
   color: #f13d80;
 }
-body .header .x-wrap .search {
+body .header .wrap .search {
   float: right;
 }
-body .header .x-wrap .search a .fa {
+body .header .wrap .search a .fa {
   margin-left: 20px;
   font-size: x-large;
 }
-body .header .x-wrap .search a:hover .fa {
+body .header .wrap .search a:hover .fa {
   color: #f13d80;
 }
 body .header::after {
