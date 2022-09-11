@@ -1,0 +1,178 @@
+body {
+    background:seashell;
+    // background-image: url(../img1/32.jpg);
+    // background-position: top;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background:#d69797;
+    .background{
+        width: 600px;
+        height: 230px;
+        background-image: url(../img1/32.jpg);
+        // background-image: linear-gradient(-90deg,#1397cc,#ff5b68);
+        background-image: linear-gradient(-90deg,#128cbc,#ff5b68);
+        background-position: top;
+        background-repeat: no-repeat;
+        // background-size: 180%;
+        border-radius: 20px;
+        margin: 30vh auto;
+        // padding: 10px 0;
+    }
+    .tap {
+        width: 600px;
+        height: 230px;
+        backdrop-filter: blur(25px);
+        border-radius: 20px;
+        display: flex;
+        box-shadow: 10px 10px 10px 0 rgb(95, 95, 95);
+        .circle {
+            width: 200px;
+            height: 200px;
+            // background: rgb(34, 35, 35);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .photo {
+                width: 130px;
+                height: 130px;
+                background: rgb(34, 35, 35);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 100px;
+                    border-radius: 50%;
+                }
+            }
+
+
+            .line {
+                img {
+                    width: 30px;
+                    position: absolute;
+                    top: 20px;
+                    right: 15px;
+                    transform-origin: top;
+                    transform: rotate(-15deg);
+                    transition: all 0.5s;
+                }
+            }
+        }
+
+        .right {
+            width: 380px;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 25px;
+
+            h2 {
+                margin-bottom: 15px;
+                font-size: 28px;
+                font-weight: 900;
+                font-family: "宋体";
+                color: rgb(35, 35, 35);
+                color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+            }
+
+            .control {
+                // background: red;
+                display: flex;
+                justify-content: space-between;
+                .icon {
+                    .fa {
+                        margin: 0 10px;
+                        font-size: 23px;
+                        color: rgb(0, 200, 170);
+                        cursor: pointer;
+                        
+                    }
+                    .center{
+                        width: 23px;
+                        height: 20px;
+                        position: relative;
+                        // background: tomato;
+                        .fa-play{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            margin: 0;
+                            opacity: 1;
+                        }
+                        .fa-pause{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            margin: 0;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .volume.fa {
+                    font-size: 23px;
+                    color: rgb(0, 200, 170);
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    span{
+                        width: 130px;
+                        height: 6px;
+                        background: rgb(18, 164, 160);
+                        background: rgb(241, 241, 241);
+                        display: inline-block;
+                        margin:0 5px;
+                        border-radius: 50px;
+                        position: relative;
+                        i{
+                            width: 50%;
+                            height: 100%;
+                            background: tomato;
+                            display: inline-block;
+                            position: absolute;
+                            border-radius: 50px;
+                        }
+                    }
+                }
+            }
+            .bar{
+                margin: 25px auto;
+                width: 330px;
+                height: 5px;
+                background: rgb(101, 101, 101);
+                background: rgb(255, 255, 255);
+                position: relative;
+                border-radius: 50px;
+                cursor: pointer;
+                p{
+                    width: 0%;
+                    height: 100%;
+                    background: tomato;
+                    border-radius: 50px;
+                    
+                }
+                .bg{
+                    width: 40px;
+                    height: 20px;
+                    // background: rgba(50, 50, 50, 0.507);
+                    position: absolute;
+                    border-radius: 5px;
+                    text-align: center;
+                    color: rgb(0, 0, 0);
+                }
+                .start{
+                    top: 15px;
+                    left: 0;
+                }
+                .end{
+                    top: 15px;
+                    left: 290px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="view">
+            <div class="bar">
+                <div class="speed"></div>
+            </div>
+            <div class="mask"></div>
+        </div>
+        <h5>海绵宝宝 配音 2823</h5>
+        <div class="num">
+            <span><i class="fa fa-youtube-play"></i> 80万</span>
+            <span><i class="fa fa-credit-card"></i>1883</span>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: rgb(84, 210, 204);
+            background: rgb(87, 164, 195);
+            background: #c5d9f4;
+            /* transform: scale(1.2); */
+        }
+
+        .wrap {
+            border-radius: 10px;
+            width: 470px;
+            margin: 250px auto;
+            box-shadow: 10px 10px 15px 0 rgb(83, 83, 83);
+            background: #fff;
+        }
+
+        .view {
+            border-radius: 10px 10px 0 0;
+            width: 470px;
+            height: 268px;
+            background-image: url("1.jpg");
+            background-position-x: 0px;
+            background-position-Y: 1080px;
+            cursor: pointer;
+            transition: all 0.005s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar {
+            width: 98%;
+            height: 5px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 5px auto;
+            overflow: hidden;
+        }
+
+        .speed {
+            width: 50px;
+            height: 5px;
+            background-color: tomato;
+            border-radius: 10px;
+        }
+
+        .mask {
+            width: 30000%;
+            height: 100%;
+            background: rgba(109, 106, 106, 0.375);
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: right;
+            box-sizing: border-box;
+            padding: 20px;
+            color: #fff;
+            /* overflow: hidden; */
+        }
+
+        h5 {
+            margin: 5px 20px;
+            color:#222222b4;
+            font-size: 16.5px;
+        }
+
+        .num {
+            display: flex;
+            justify-content:left;
+        }
+
+        span {
+            margin: 5px 20px;
+            font-size: larger;
+            color: gray;
+        }
+        i{
+            margin-right: 5px;
+        }
+
+        p {
+            color: red;
+            color: #fff;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            left: 0px;
+            margin-left: 400px;
+            transition: all 0.5s;
+        }
+    </style>
+
+    <script>
+        var viewEl = document.querySelector(".view");
+        var speedEl = document.querySelector(".speed");
+        var maskEl = document.querySelector(".mask");
+        var offsetLeft = viewEl.offsetLeft;
+        var k;
+        var dm = [
+            "章鱼哥还是没有胜过强风暴雨(doge)",
+            "日本裁判",
+            "日本裁判",
+            "海绵宝宝笑死我了",
+            "黑人小哥",
+            "堡垒之夜",
+            "最喜欢的一集",
+            "最喜欢的一集",
+            "喜欢",
+            "我怎么觉得派大星这个配音我在神奇宝贝里听过",
+            "我看见你了",
+            "但凡章鱼哥早点回去都不至于这样",
+            "这……这我还真有可能“模仿”",
+            "为什么非要执着于台配或者央配呢",
+            "派总依旧稳定输出",
+            "包租公～",
+            "为什么台配的海绵宝宝跟低能儿似的",
+            "井字游戏，其实可以先手必胜的",
+            "我小时候就看的台配",
+            "终于找到了",
+        ];
+
+        viewEl.onmousemove = function () {
+            var ww = (event.pageX - offsetLeft);
+            speedEl.style.width = ww + "px";
+            viewEl.style.backgroundPositionX = -ww * 480 + "px";
+            si(ww);
+        }
+        function si(ww) {
+            if (ww >= 48 * 9) {
+                viewEl.style.backgroundPositionY = -270 * 9 + "px";
+            } else if (ww >= 48 * 8) {
+                viewEl.style.backgroundPositionY = -270 * 8 + "px";
+            } else if (ww >= 48 * 7) {
+                viewEl.style.backgroundPositionY = -270 * 7 + "px";
+            } else if (ww >= 48 * 6) {
+                viewEl.style.backgroundPositionY = -270 * 6 + "px";
+            } else if (ww >= 48 * 5) {
+                viewEl.style.backgroundPositionY = -270 * 5 + "px";
+            } else if (ww >= 48 * 4) {
+                viewEl.style.backgroundPositionY = -270 * 4 + "px";
+            } else if (ww >= 48 * 3) {
+                viewEl.style.backgroundPositionY = -270 * 3 + "px";
+            } else if (ww >= 48 * 2) {
+                viewEl.style.backgroundPositionY = -270 * 2 + "px";
+            } else if (ww >= 48 * 1) {
+                viewEl.style.backgroundPositionY = -270 + "px";
+            } else if (ww < 48) {
+                viewEl.style.backgroundPositionY = 0 + "px";
+            };
+        }
+
+        viewEl.onmouseover = function () {
+            var i = 0, k = 0;
+            sh = setInterval(function () {
+                // console.log(i);
+                // console.log(dm[i]);
+                var node = document.createElement("p");
+                node.innerHTML = dm[i];
+                document.querySelector(".mask").appendChild(node);
+
+                node.style.left = i * 120 + "px";
+                maskEl.style.left = -k + "px";
+                if (i % 2 === 0) {
+                    node.style.top = 40 + "px";
+                }
+                if (i % 3 === 0) {
+                    node.style.top = 60 + "px";
+                }
+                if (i % 5 === 0) {
+                    node.style.top = 80 + "px";
+                }
+                i++, k++;
+                if (dm[i] === undefined) {
+                    i = 0;
+                }
+            }, 1000 / 60);
+        }
+        viewEl.onmouseout = function () {
+            clearInterval(sh);
+        }
+    </script>
+</body>
+
+</html>

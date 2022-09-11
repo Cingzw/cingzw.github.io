@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body .wrap {
+  box-shadow: 0 0 20px 0 black;
+  width: 800px;
+  margin: 30px auto;
+  padding: 10px;
+}
+body .wrap .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body .wrap .nav span {
+  background: #2c88e2;
+  color: #fff;
+  padding: 10px;
+}
+body .wrap .nav .search {
+  border: 1px solid gray;
+}
+body .wrap .nav .search input {
+  padding: 8px;
+  border: none;
+}
+body .wrap .nav .search span {
+  background: none;
+  padding: 0;
+  color: black;
+}
+body .wrap .nav .search button {
+  padding: 5px 10px;
+  border: none;
+  font-size: larger;
+}
+body .wrap .menu {
+  margin: 20px 0;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+body .wrap .menu .box {
+  width: 70px;
+  text-align: center;
+  margin: 15px ;
+}
+body .wrap .menu .box img {
+  width: 100%;
+  border: 1px solid blue;
+  border-radius: 15px 0 15px 0;
+}
+/*# sourceMappingURL=./3.2.css.map */

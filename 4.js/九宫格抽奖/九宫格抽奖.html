@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九宫格抽奖-Cingzw</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="test">
+            <div class="li">恭喜您,抽中了 Nokia(铂钢灰)</div>
+            <div class="li">恭喜您,抽中了 ipaid mini 6</div>
+            <div class="li">恭喜您,抽中了 美的电磁炉</div>
+            <div class="li">恭喜您,抽中了 美的洗衣机</div>
+            <div class="li">恭喜您,抽中了 精美实木衣柜</div>
+            <div class="li">恭喜您,抽中了 美的电冰箱</div>
+            <div class="li">恭喜您,抽中了 Hasee 电脑</div>
+            <div class="li">很遗憾,你未抽中...</div>
+            <div class="li"></div>
+        </div>
+
+        <div class="menu">
+            <div class="list">手机</div>
+            <div class="list">平板</div>
+            <div class="list">电磁炉</div>
+            <div class="list">洗衣机</div>
+            <button>开始</button>
+            <div class="list">衣柜</div>
+            <div class="list">冰箱</div>
+            <div class="list">电脑</div>
+            <div class="list">未抽中</div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(240, 240, 240);
+            background:rgb(210 241 236);
+            /* background: rgb(241 236 210); */
+        }
+
+        .wrap {
+            width: 400px;
+            height: 400px;
+            /* background: lightblue; */
+            margin: 50px auto;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .li {
+            width: 100%;
+            height: 40px;
+            box-shadow: 0px 0px 10px 0 rgb(108, 108, 108);
+            margin: 20px 0;
+            border-radius: 10px;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 3.5s;
+            font-weight: bold;
+        }
+
+        .li:last-child {
+            opacity: 1;
+        }
+
+        .menu {
+            width: 400px;
+            height: 400px;
+            /* background: skyblue; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .list {
+            width: 100px;
+            height: 100px;
+            background: rgb(26, 230, 155);
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 10px;
+        }
+
+        /*将以下的 child() 进行定位*/
+        .list:nth-child(4) {
+            position: relative;
+            top: 0;
+            left: 280px;
+            ;
+        }
+
+        .list:nth-child(6) {
+            position: relative;
+            top: 135px;
+            left: 0px;
+            ;
+        }
+
+        .list:nth-child(7) {
+            position: relative;
+            top: 0px;
+            left: 140px;
+            ;
+        }
+
+        .list:nth-child(8) {
+            position: relative;
+            top: 0px;
+            left: -140px;
+            ;
+        }
+
+        .list:nth-child(9) {
+            position: relative;
+            top: -135px;
+            left: -280px;
+            ;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            background: salmon;
+            
+        }
+
+        button:hover {
+            box-shadow: 0 0 5px 0 rgb(79, 79, 79);
+            border: 2px solid rgb(123, 123, 123);
+        }
+    </style>
+
+    <script>
+        var listEl = document.querySelectorAll(".list");
+        var button = document.querySelector("button");
+        var lis = document.querySelectorAll(".li");
+        var k;   //随机时间,让停止时间随机
+        var z = 0;
+        var ts = 40;
+        var open = true;
+
+        function Canclick() {
+            console.log("已点击");
+            k = Math.floor(Math.random() * 1000 + 4000);
+            
+            sh = setInterval(function () {
+                if (z <= 7) {
+                    for (var i = 0; i < listEl.length; i++) {
+                        if (i === z) {
+                            listEl[i].style.background = "tomato";
+                            lis[i].style.opacity = 1;
+                        } else {
+                            listEl[i].style.background = " rgb(26, 230, 155)";
+                            lis[i].style.opacity = 0;
+                        }
+                    }
+                } else {
+                    z = -1;
+                }
+                z++;
+                ts++;
+            }, ts)  //50毫秒遍历一次
+
+            setTimeout(function () {
+                clearInterval(sh);  //清除定时器(让 Interval 定时器停止)
+                z = 0;
+                ts = 50;
+                open = true;
+            }, k);
+        };
+
+        button.onclick = function () {
+            if (open) {
+                Canclick();
+            }
+            open = false;
+        }
+    </script>

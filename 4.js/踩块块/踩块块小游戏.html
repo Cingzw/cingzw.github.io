@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh" style="font-size:calc(100vw / 375);">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踩块块-小游戏</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(233, 38, 119);
+            /* padding: 5px 15px; */
+        }
+
+        .stage {
+            width: 100%;
+            height: 100vh;
+            max-width: 372px;
+            max-height: 900px;
+            background: rgb(255, 197, 197);
+            /* background-image: url("bg.png"); */
+            position: relative;
+            overflow: hidden;
+            /* border-radius: 35px; */
+            margin: 0 auto;
+        }
+
+        .stage .main {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .stage .main i {
+            width: 93px;
+            height: 180px;
+            background: rgb(12, 174, 169);
+            background: rgb(0, 167, 162);
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .stage .main i.played {
+            background: rgb(100, 100, 100,0.5);
+            /* opacity: 0; 标注已被点击的设置为 透明 */
+        }
+
+        .again {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: rgba(135, 207, 235, 0.325);
+            display: none;
+            z-index: 9;
+        }
+
+        .over {
+            width: 200px;
+            height: 50px;
+            background: tan;
+            padding: 50px;
+            background-image: url("level1.png");
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: 30px 45px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            margin-left: -150px;
+            border-radius: 30px;
+        }
+
+        .over p {
+            position: absolute;
+            bottom: 0;
+            left: 85px;
+            color: rgb(31, 134, 162);
+            font-weight: bolder;
+            font-size: xx-large;
+            cursor: pointer;
+        }
+
+        p:hover {
+            color: rgb(209, 72, 48);
+        }
+
+        .score {
+            width: 160px;
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 25%;
+            margin-left: -80px;
+        }
+
+        .num {
+            background-image: url("bd46b88b-305d-4c09-a696-e5d01bbc9564.png");
+            background-size: 300px;
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 40px;
+        }
+
+        .one {
+            background-position-x: 0px;
+        }
+
+        .cover {
+            width: 100%;
+            height: 100%;
+            /* background: rgba(255, 180, 180, 0.31); */
+            background-image: url(./open.jpg);
+            background-position: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 999;
+        }
+
+        .open {
+            width: 280px;
+            height: 115px;
+            /* background-image: url("sh.jpg"); */
+            background: gainsboro;
+            background: #7b7b7b8d;
+            background-position: -100px -390px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -140px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stage button {
+            width: 150px;
+            height: 50px;
+            font-size: x-large;
+            background-color: rgb(17, 232, 143);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .menu {
+            width: 100px;
+            /* height: 30px; */
+            padding: 5px;
+            /* background: rgb(106, 180, 170); */
+            background: transparent;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 5;
+            position: absolute;
+            top: 0px;
+            right: -5px;
+            font-size: xx-large;
+            color: rgb(219, 57, 57);
+            border-radius: 0 0 0 10px;
+            cursor: pointer;
+        }
+
+        .hint {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* background: rgba(58, 167, 167, 0.547); */
+            display: none;
+        }
+
+        .border {
+            width: 100px;
+            height: 40px;
+            background: sandybrown;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="main"><img src="" alt=""></div>
+        <div class="again">
+            <section class="over">
+                <p>再来一局</p>
+            </section>
+        </div>
+        <section class="score">
+            <div class="num one"></div>
+            <div class="num two"></div>
+            <div class="num san"></div>
+        </section>
+        <div class="cover">
+            <div class="open">
+                <button>开始游戏</button>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="replay">
+                <i class="fa fa-repeat"></i>
+            </div>
+            <div class="continue">
+                <i class="fa fa-pause-circle-o"></i>
+            </div>
+        </div>
+        <div class="hint">
+            <div class="border">
+                <p>游戏已暂停</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var stageEl = document.querySelector(".stage");
+        var mainEl = document.querySelector(".stage .main");
+        var againEl = document.querySelector(".stage .again");
+        var overEl = document.querySelector(".stage .over");
+        var pEl = document.querySelector(".stage .over p");
+        var ones = document.querySelector(".stage .score .one");
+        var twos = document.querySelector(".stage .score .two");
+        var sans = document.querySelector(".stage .score .san");
+        var coverEl = document.querySelector(".stage .cover");
+        var openEl = document.querySelector(".stage .open");
+        var buttonEl = document.querySelector(".stage .open button");
+        var replayEl = document.querySelector(".stage .menu .replay");
+        var continueEl = document.querySelector(".stage .menu .continue");
+        var hintEl = document.querySelector(".stage .hint");
+        console.log(openEl, buttonEl, continueEl, replayEl, pEl, coverEl, againEl);
+        var dots = [];
+        var music = [
+            [
+                25, 21, 22, 23, 24, 25, 21, 21, 26, 24, 25, 26, 27, 31, 21, 21, 24, 25, 24, 23, 22, 23, 24, 23, 22, 21, 17,
+                21, 22, 23, 21, 22, 25, 21, 22, 23, 24, 25, 21, 21, 26, 24, 25, 26, 27, 31, 21, 21, 24, 25, 24, 23, 22, 23,
+                24, 23, 22, 21, 22, 23, 22, 21, 17, 21,
+            ],
+            [
+                23, 22, 21, 17, 16, 15, 16, 17, 21, 17, 16, 15, 14, 13, 14, 12, 21, 17, 21, 11,  7, 15, 12, 13, 11, 21, 17,
+                17, 23, 25, 26, 24, 23, 22, 24, 24, 23, 21, 17, 16, 15, 14, 13, 12, 14, 13, 12, 11, 12, 13, 14, 15, 12, 15,
+                14, 13, 16, 15, 14, 15, 14, 13, 12, 11,  6, 16, 17, 21, 17, 16, 15, 14, 13, 12, 16, 15, 16, 15, 14, 13, 23,
+                21, 22, 21, 23, 22, 24, 25, 23, 24, 25, 23, 24, 25, 15, 16, 17, 21, 22, 23, 24, 23, 21, 22, 23, 13, 14, 15,
+                16, 15, 14, 15, 13, 14, 15, 14, 16, 15, 14, 13, 12, 13, 12, 11, 12, 13, 14, 15, 16, 14, 16, 15, 16, 17, 21,
+                15, 16, 17, 21, 22, 23, 24, 25, 23, 21, 22, 23, 22, 21, 22, 17, 21, 22, 23, 22, 21, 17, 21, 16, 17, 21, 11,
+                12, 13, 14, 13, 12, 13, 21, 17, 21, 16, 21, 17, 16, 15, 14, 15, 14, 13, 14, 15, 16, 17, 11, 16, 21, 17, 21,
+                17, 16, 17, 21, 22, 21, 17, 21, 16, 17, 23, 13, 14, 13, 12, 22, 23, 22, 21, 13, 11, 16, 15,  5,  4,  5,  6, 
+                17, 16, 17,  5,  4,  5,  6, 16, 15, 16, 17, 17, 16, 17, 11, 21, 22, 21, 17,  7, 11,  7,  6, 16, 15, 16, 17,
+                12, 11, 21, 22, 24, 23, 13, 15, 23, 21, 24, 23, 24, 22, 15, 14, 15, 13, 21, 17, 21, 13, 15, 15, 16, 17, 15,
+                13, 21, 22, 23, 21, 23, 23, 22, 21, 17, 16, 16, 15, 16, 17, 21, 23, 22, 21, 23, 16, 22, 16,  7, 13, 16, 13,
+            ],
+        ];
+
+        // 点击事件触发时,游戏开始
+        buttonEl.onclick = function () {
+            coverEl.style.display = "none";  //游戏开始的同时,将开始页面 display:none;
+            vla(); // 调用定时器
+        }
+
+        //点错后,游戏结束
+        mainEl.onclick = function () {
+            clearInterval(sh);
+            againEl.style.display = "block";
+            console.log("666");
+        }
+
+        //游戏结束后,再来一局
+        pEl.onclick = function () {
+            location.reload();  //页面刷新--常用
+            // location.replace("http://127.0.0.1:5500/06-html-js4/6.1-html/1.2-%E8%B8%A9%E7%99%BD%E5%9D%97.html");    //(少用)新文档替换当前文档,类似于页面刷新
+        }
+
+        //重新开始
+        replayEl.onclick = function () {
+            location.reload();  //页面刷新--常用
+        }
+
+        // 暂停/继续
+        var i = 0;
+        continueEl.onclick = function () {
+            if (i % 2 === 0) {
+                clearInterval(sh);
+                continueEl.style.color = "gray";
+                hintEl.style.display = "block";
+            } else {
+                vla(); // 调用定时器(重开定时器)
+                continueEl.style.color = " rgb(219, 57, 57)";
+                hintEl.style.display = "none";
+            }
+            console.log(i);
+            i++;
+        }
+
+
+        function Dot(y) {
+            this.x = Math.floor(Math.random() * 4);
+            this.y = y;
+            this.node = document.createElement("i");
+            mainEl.appendChild(this.node);
+            this.updateView();
+
+            var _this = this;
+            this.node.onclick = function () {
+                event.stopPropagation();    //阻止冒泡
+
+                var firstUnPlayed = dots.filter(function (dot) {
+                    return !dot.played;
+                })[0];
+                if (this.isSameNode(firstUnPlayed.node)) {
+                    _this.node.classList.add("played");
+                    _this.played = true;
+                    _this.audio();
+                    _this.score();
+                }
+            }
+        };
+
+        //音频
+        // var mc = 0;
+        Dot.prototype.audio = function () {
+            var mc = Math.floor(Math.random()*297); //在范围内生成随机数,让音乐随机
+            var audio = document.createElement("audio");
+            audio.src = "./music/" + "sound_" + music[1][mc] + ".mp3";
+            audio.play();   //播放音频
+            // mc++;
+            console.log(mc);
+        }
+
+        //分数
+        var j = 0;
+        var k = 0;
+        var g = 0;
+        Dot.prototype.score = function () {
+            j++;
+            if (j > 9) {
+                j = 0;
+                s = s + 0.002;  //游戏每加 10分,速度加 0.002
+                k++;
+                if (k > 9) {
+                    k = 0;
+                    g++;
+                    ones.style.backgroundPositionX = -30 * g + "px";
+                }
+                twos.style.backgroundPositionX = -30 * k + "px";
+            }
+            sans.style.backgroundPositionX = -30 * j + "px";
+        }
+
+        var s = 0.02;
+        //向下移动的速度
+        Dot.prototype.move = function () {
+            this.y += s;
+        };
+
+        //更新视图中所有盒子的位置
+        Dot.prototype.updateView = function () {
+            this.node.style.left = this.x * 93 + "px";
+            this.node.style.top = this.y * 180 + "px";
+        }
+
+        // 设置初始值:初始时页面显示的盒子的个数
+        function init() {
+            for (var i = 2; i > 0; i--) {
+                var d = new Dot(i - 1);
+                dots.push(d);
+            }
+        }
+        init(); //调用这个函数,使其初始时已在运行
+
+        //封装定时器
+        var sh;
+        function vla() {
+            sh = setInterval(function () {
+
+                dots.forEach(function (dot) {
+                    dot.move();
+                    dot.updateView();
+                });
+
+                //添加一个新盒子
+                if (dots[dots.length - 1].y >= 0) {
+                    var d = new Dot(-1);
+                    dots.push(d);
+                }
+
+                // 标注还未被点击的盒子
+                var firstUnPlayed = dots.filter(function (dot) {
+                    return !dot.played;
+                })[0];
+                if (firstUnPlayed && (firstUnPlayed.y + 1) * 180 >= stageEl.offsetHeight) {
+                    clearInterval(sh);
+                    againEl.style.display = "block";
+                };
+
+                //标注已被点击的盒子
+                var firstPlayed = dots.filter(function (dot) {
+                    return dot.played;
+                    console.log("-56");
+                })[0];
+
+                if (firstPlayed && firstPlayed.y * 180 > stageEl.offsetHeight) {
+                    mainEl.removeChild(firstPlayed.node);
+                    dots.splice(dots.indexOf(firstPlayed), 1);
+                }
+            }, 1000 / 60)
+        }
+    </script>
+</body>
+
+</html>

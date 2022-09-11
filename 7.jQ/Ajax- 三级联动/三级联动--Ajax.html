@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="./city.css">
+  <title>Document</title>
+  <style>
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 160px;
+      font-size: 14px;
+    }
+
+    .list ul {
+      width: 100%;
+      padding: 5px 10px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      left: 300px;
+      background: #6bd2d1;
+      margin-bottom: 5px;
+    }
+
+    .list ul li {
+      position: fixed;
+      width: 170px;
+      left: 480px;
+      padding: 5px 0px;
+      background: #bcddca;
+    }
+
+    .list ul li li {
+      position: fixed;
+      width: 170px;
+      top: 0;
+      left: 670px;
+      padding: 5px 0px;
+      background: #d6dce8;
+    }
+    .list ul li li:hover{
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="list"></div>
+
+  <script>
+    var top1 = 0; //第二级标签相对定位值
+    var top2 = 0; //第三级标签相对定位值
+
+    $.get("./prov-county.json", function (res) {
+      res.forEach(function (e) {
+        var arr = e.split(':'); //以 : 拆分Ajax获取到的内容
+        if (arr[0].length == 2) {
+          $(".list").append("<ul data-id=" + arr[0] + "> " + arr[1] + "</ul>");
+        }
+      });
+
+      // 二级遍历
+      $(".list ul").click(function (city) {
+        var idEl = $(this).data("id");
+        console.log(idEl);
+        var _this = $(this)[0];
+        console.log(_this);
+        $(".list").find("li").remove();  //去重
+        res.forEach(function (e) {
+          var arr = e.split(':');
+          if (arr[0].length == 4) {
+            var shortName = arr[0].substring(0, 2); //长度为4的数组, 截取下标0~2(不包括2);
+            if (shortName == idEl) {
+              console.log(arr[1]);
+              var lis = $('<li data-id=' + arr[0] + ' style="top:' + top1 + 'px">' + arr[1] + '</li>');
+              $(_this).append(lis);
+              city.stopPropagation();
+              top1 += 35;
+            }
+          }
+        });
+        top1 = 0;
+        $(this).css({ background: "tomato" }).siblings().css({ background: "#6bd2d1" });
+
+        // 遍历末级
+        $(".list ul li").click(function (p) {
+          var liEl = $(this).data("id");
+          var _thisl = $(this)[0];
+          $(".list ul li").find("li").remove();
+          res.forEach(function (e) {
+            var arr = e.split(':');
+            if (arr[0].length == 6) {
+              var shortName = arr[0].substring(0, 4);
+              if (shortName == liEl) {
+                console.log(arr[1]);
+                var lisl = $('<li data-id=' + arr[0] + ' style="top:' + top2 + 'px">' + arr[1] +
+                  '</li>');
+                $(_thisl).append(lisl);
+                p.stopPropagation();
+                top2 += 35;
+              }
+            }
+          });
+          top2 = 0;
+          $(this).css({ background: "tomato" }).siblings().css({ background: "#bcddca" });
+
+          //  末级点击样式
+          $(".list ul li li").click(function (county) {
+            $(this).css({ background: "tomato" }).siblings().css({ background: "#d6dce8" });
+            county.stopPropagation();
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

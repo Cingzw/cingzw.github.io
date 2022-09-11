@@ -1,0 +1,463 @@
+body {
+  background: url(../background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .head {
+  background: #fff;
+}
+body .head .menu {
+  font-size: small;
+  padding: 12px 0;
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body .head .menu .left {
+  float: left;
+}
+body .head .menu .left span {
+  margin: 0 10px;
+}
+body .head .menu .left span a {
+  color: gray;
+}
+body .head .menu .right {
+  float: right;
+}
+body .head .menu .right span {
+  color: gray;
+  margin: 0 10px;
+}
+body .head .menu .right span a {
+  color: gray;
+}
+body .title .top {
+  overflow: hidden;
+  width: 1200px;
+  margin: 0 auto;
+}
+body .title .top .logo {
+  margin: 45px 50px;
+  float: left;
+}
+body .title .top .search {
+  width: 700px;
+  margin-top: 45px;
+  float: left;
+  overflow: hidden;
+}
+body .title .top .search .search-top {
+  margin: 0 auto;
+  width: 660px;
+  padding: 2px 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  border: 2px solid #f95104;
+}
+body .title .top .search .search-top span1 {
+  margin: 5px 0 0 20px;
+  float: left;
+}
+body .title .top .search .search-top span2 {
+  padding-top: 5px;
+  float: left;
+  margin: 0 8px;
+}
+body .title .top .search .search-top P {
+  float: left;
+  overflow: hidden;
+}
+body .title .top .search .search-top P input {
+  width: 507px;
+  padding: 9px 0;
+  text-align: left;
+  float: left;
+}
+body .title .top .search .search-top P button {
+  color: #fff;
+  font-family: "仿宋";
+  font-size: larger;
+  padding: 7px 20px;
+  border: none;
+  background: #f95104;
+  float: right;
+  border-radius: 20px;
+}
+body .title .top .search .menu {
+  width: 660px;
+  margin: 15px auto;
+}
+body .title .top .search .menu li {
+  margin: 0 8px;
+  float: left;
+}
+body .title .top .scan {
+  background: #fff;
+  padding: 4px 7px;
+  box-sizing: border-box;
+  float: right;
+  margin: 15px 50px 15px 0;
+}
+body .title .top .scan p {
+  font-family: "仿宋";
+  color: #ff4060;
+  margin-bottom: 2px;
+  text-align: center;
+}
+body .wrap {
+  padding: 20px 0;
+  background: #fff;
+  width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px 20px 0 0 ;
+}
+body .wrap .wrap1 {
+  width: 1150px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body .wrap .wrap1 .left {
+  box-sizing: border-box;
+  padding: 10px;
+  background: #f7f9fa;
+  width: 280px;
+  border-radius: 10px;
+  float: left;
+}
+body .wrap .wrap1 .left h3 {
+  margin: 10px;
+  font-size: larger;
+  font-weight: bold;
+}
+body .wrap .wrap1 .left .menu .style {
+  margin: 15px 10px;
+}
+body .wrap .wrap1 .left .menu .style li {
+  margin-right: 5px;
+}
+body .wrap .wrap1 .left .menu .style span {
+  margin-right: 10px;
+  color: gray;
+}
+body .wrap .wrap1 .right {
+  float: right;
+}
+body .wrap .wrap1 .right .list {
+  padding: 10px;
+  background: #f7f9fa;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+body .wrap .wrap1 .right .list span {
+  margin: 0 10px;
+}
+body .wrap .wrap1 .right .box {
+  overflow: hidden;
+}
+body .wrap .wrap1 .right .box img {
+  width: 550px;
+  float: left;
+  border-radius: 10px;
+}
+body .wrap .wrap1 .right .box .hello {
+  text-align: center;
+  margin: 10px 0 10px 10px;
+  width: 300px;
+  float: right;
+}
+body .wrap .wrap1 .right .box .hello img {
+  margin: 10px 110px;
+  width: 80px;
+  border-radius: 50%;
+}
+body .wrap .wrap1 .right .box .hello h5 {
+  margin: 10px;
+}
+body .wrap .wrap1 .right .box .hello .loading {
+  margin: 20px 0 5px 0;
+}
+body .wrap .wrap1 .right .box .hello .loading span {
+  margin: 0px 5px;
+  background: #ff5e00;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+body .wrap .wrap1 .right .box .hello .menu {
+  overflow: hidden;
+}
+body .wrap .wrap1 .right .box .hello .menu .card {
+  margin: 20px 5px;
+  float: left;
+}
+body .wrap .wrap1 .right .box .hello .menu .card li {
+  margin: 15px 0px;
+}
+body .wrap .wrap1 .right .box .hello .hot span1 {
+  color: #ff663e;
+  background: #ffefef;
+  float: left;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+body .wrap .wrap1 .right .box .hello .hot a {
+  float: left;
+  padding: 5px 0;
+}
+body .wrap .wrap2 {
+  margin: 25px;
+  overflow: hidden;
+}
+body .wrap .wrap2 .title {
+  overflow: hidden;
+}
+body .wrap .wrap2 .title h2 {
+  font-size: xx-large;
+  font-family: "仿宋";
+  margin: 10px 0;
+  font-weight: 600;
+  float: left;
+}
+body .wrap .wrap2 .title p {
+  font-family: "仿宋";
+  padding: 5px 10px;
+  background: #ff6700;
+  margin: 10px 10px;
+  float: left;
+  border-radius: 5px;
+  color: #fff;
+}
+body .wrap .wrap2 .list1 {
+  float: left;
+  overflow: hidden;
+  margin: 0 auto;
+}
+body .wrap .wrap2 .list1 .goods {
+  background: #f7f9fa;
+  width: 375px;
+  border: 1px solid #f7f9fa;
+  box-sizing: border-box;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 12.5px 0px 12.5px 0;
+}
+body .wrap .wrap2 .list1 .goods img {
+  float: left;
+  border-radius: 5px;
+  width: 110px;
+  margin-right: 10px;
+}
+body .wrap .wrap2 .list1 .goods .menu {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 225px;
+  float: right;
+}
+body .wrap .wrap2 .list1 .goods .menu span1 {
+  font-size: small;
+  color: #5a5d5a;
+}
+body .wrap .wrap2 .list1 .goods .menu span1:hover {
+  color: #f95104;
+}
+body .wrap .wrap2 .list1 .goods .menu h5 {
+  margin: 5px 0;
+}
+body .wrap .wrap2 .list1 .goods .menu h5 span2 {
+  font-family: "仿宋";
+  font-size: xx-small;
+  padding: 2px;
+  text-align: center;
+  width: 89px;
+  border: 1px solid tomato;
+  border-radius: 3px;
+}
+body .wrap .wrap2 .list1 .goods .menu p {
+  color: #ff5000;
+  font-size: large;
+}
+body .wrap .wrap2 .list2 {
+  float: left;
+  overflow: hidden;
+  margin: 0 auto;
+}
+body .wrap .wrap2 .list2 .goods {
+  background: #f7f9fa;
+  width: 375px;
+  border: 1px solid #f7f9fa;
+  box-sizing: border-box;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 12.5px;
+}
+body .wrap .wrap2 .list2 .goods img {
+  float: left;
+  border-radius: 5px;
+  width: 110px;
+  margin-right: 10px;
+}
+body .wrap .wrap2 .list2 .goods .menu {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 225px;
+  float: right;
+}
+body .wrap .wrap2 .list2 .goods .menu span1 {
+  font-size: small;
+  color: #5a5d5a;
+}
+body .wrap .wrap2 .list2 .goods .menu span1:hover {
+  color: #f95104;
+}
+body .wrap .wrap2 .list2 .goods .menu h5 {
+  margin: 5px 0;
+}
+body .wrap .wrap2 .list2 .goods .menu h5 span2 {
+  font-family: "仿宋";
+  font-size: xx-small;
+  padding: 2px;
+  text-align: center;
+  width: 89px;
+  border: 1px solid tomato;
+  border-radius: 3px;
+}
+body .wrap .wrap2 .list2 .goods .menu p {
+  color: #ff5000;
+  font-size: large;
+}
+body .wrap .wrap2 .list3 {
+  float: left;
+  overflow: hidden;
+  margin: 0 auto;
+}
+body .wrap .wrap2 .list3 .goods {
+  background: #f7f9fa;
+  width: 375px;
+  border: 1px solid #f7f9fa;
+  box-sizing: border-box;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 12.5px 0px 12.5px 0;
+}
+body .wrap .wrap2 .list3 .goods img {
+  float: left;
+  border-radius: 5px;
+  width: 110px;
+  margin-right: 10px;
+}
+body .wrap .wrap2 .list3 .goods .menu {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 225px;
+  float: right;
+}
+body .wrap .wrap2 .list3 .goods .menu span1 {
+  font-size: small;
+  color: #5a5d5a;
+}
+body .wrap .wrap2 .list3 .goods .menu span1:hover {
+  color: #f95104;
+}
+body .wrap .wrap2 .list3 .goods .menu h5 {
+  margin: 5px 0;
+}
+body .wrap .wrap2 .list3 .goods .menu h5 span2 {
+  font-family: "仿宋";
+  font-size: xx-small;
+  padding: 2px;
+  text-align: center;
+  width: 89px;
+  border: 1px solid tomato;
+  border-radius: 3px;
+}
+body .wrap .wrap2 .list3 .goods .menu p {
+  color: #ff5000;
+  font-size: large;
+}
+body .wrap .wrap2 .goods:hover {
+  border: 1px solid #ff915e;
+}
+body .wrap .wrap3 {
+  margin: 25px;
+  overflow: hidden;
+}
+body .wrap .wrap3 .card {
+  color: gray;
+  margin-right: 17.5px;
+  width: 270px;
+  float: left;
+}
+body .wrap .wrap3 .card .title {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+body .wrap .wrap3 .card .title li {
+  margin: 0 10px;
+  font-size: x-large;
+}
+body .wrap .wrap3 .card .title p {
+  font-size: x-large;
+  font-weight: bold;
+  font-family: "仿宋";
+}
+body .wrap .wrap3 .card .menu {
+  width: 253px;
+}
+body .wrap .wrap3 .card .menu span a {
+  color: gray;
+}
+body .wrap .wrap3 .card .menu span a:hover {
+  color: #f95104;
+}
+body .footer {
+  margin-top: 30px;
+  background: #fff;
+  padding-bottom: 20px;
+}
+body .footer .size {
+  width: 1200px;
+  margin: 0 auto;
+}
+body .footer .size .top {
+  padding: 5px;
+}
+body .footer .size .top span {
+  padding: 0 1px;
+  margin-right: 6px;
+}
+body .footer .size .top span a {
+  font-family: "宋体";
+  line-height: 35px;
+}
+body .footer .size .bot {
+  font-size: small;
+  text-align: center;
+}
+body .footer .size .bot span {
+  margin: 0 5px 7px 0 ;
+}
+body .footer .size .bot span a {
+  color: #846c84;
+}
+body .footer .size .bot .time {
+  margin-left: 20px;
+  color: #846c84;
+  font-size: larger;
+}
+body .footer .size p {
+  font-family: "宋体";
+  margin-bottom: 5px ;
+  color: gray;
+  font-size: small;
+}
+body .footer .size a:hover {
+  color: #f95104;
+}
+/*# sourceMappingURL=./6.1.css.map */

@@ -1,0 +1,741 @@
+body {
+  background: url(../6198779784198.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #ffffff;
+}
+body .header .top {
+  background: #ffffff;
+}
+body .header .top .size {
+  margin: 0 auto;
+  width: 1100px;
+  overflow: hidden;
+}
+body .header .top .size .logo {
+  float: left;
+  overflow: hidden;
+}
+body .header .top .size .logo .tent {
+  float: left;
+  margin: 0 30px;
+}
+body .header .top .size .logo .cf {
+  float: left;
+}
+body .header .top .size .help {
+  margin-top: 8px;
+  float: right;
+}
+body .header .top .size .help .sprit {
+  float: left;
+  width: 30px;
+  height: 30px;
+  background: url(../title_sprite.png);
+  background-repeat: no-repeat;
+  background-position-x: -30px;
+}
+body .header .top .size .help p {
+  align-self: center;
+  float: right;
+}
+body .header .top .size .help p a {
+  margin-right: 20px;
+}
+body .header .bot {
+  background: rgba(0, 0, 0, 0.8);
+}
+body .header .bot .size {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 1400px;
+  margin: 0 auto;
+}
+body .header .bot .size img {
+  float: left;
+}
+body .header .bot .size .menu {
+  margin: 20px 30px 0 40px;
+  width: 910px;
+  float: left;
+  overflow: hidden;
+  display: flex;
+}
+body .header .bot .size .menu .list {
+  width: 130px;
+  height: 70px;
+  text-align: center;
+}
+body .header .bot .size .menu .list a {
+  font-size: larger;
+  color: #c9c9dd;
+}
+body .header .bot .size .menu .list p {
+  color: #c9c9dd;
+}
+body .header .bot .size .menu .list:hover {
+  background: url(../index.png);
+  background-position-y: -13px;
+}
+body .header .bot .size .menu .list:hover a {
+  color: #f3b63b;
+}
+body .header .bot .size .welcome {
+  float: right;
+  margin-left: 15px;
+  width: 180px;
+  overflow: hidden;
+}
+body .header .bot .size .welcome .hero {
+  float: left;
+  width: 43px;
+  height: 43px;
+  text-align: center;
+  border: 2px solid goldenrod;
+  border-radius: 50%;
+}
+body .header .bot .size .welcome .loading {
+  float: right;
+}
+body .header .bot .size .welcome .loading a {
+  color: #fff;
+}
+body .header .bot .size .welcome .loading p {
+  color: #a7a7a7;
+  font-size: small;
+}
+body .section1 {
+  margin-top: 400px;
+}
+body .section1 .wrap1 {
+  position: relative;
+  width: 1200px;
+  background-image: linear-gradient(180deg, #3a3a3a, #be9b9b);
+  margin: 0 auto;
+  display: flex;
+}
+body .section1 .wrap1 .view {
+  width: 630px;
+}
+body .section1 .wrap1 .view img {
+  width: 630px;
+}
+body .section1 .wrap1 .view .menu {
+  background: rgba(0, 0, 0, 0.874);
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+body .section1 .wrap1 .view .menu .list {
+  width: 126px;
+  height: 45px;
+}
+body .section1 .wrap1 .view .menu .list a {
+  line-height: 45px;
+  font-size: larger;
+  color: #b1b2be;
+}
+body .section1 .wrap1 .view .menu .list:hover {
+  background: #262626;
+}
+body .section1 .wrap1 .view .menu .list:hover a {
+  color: #f3b63b;
+}
+body .section1 .wrap1 .news {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 330px;
+  color: #b8b9c5;
+}
+body .section1 .wrap1 .news .nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+body .section1 .wrap1 .news .nav .list a {
+  color: #b8b9c5;
+}
+body .section1 .wrap1 .news hr {
+  width: 265px;
+  color: #b8b9c5;
+}
+body .section1 .wrap1 .news .hot {
+  line-height: 40px;
+  height: 40px;
+  width: 310px;
+  text-overflow: ellipsis;
+  background: #414046;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  color: #f3c258;
+}
+body .section1 .wrap1 .news .time {
+  width: 310px;
+}
+body .section1 .wrap1 .news .time li {
+  margin: 9.9px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .section1 .wrap1 .news .time li h3 {
+  font-size: small;
+  text-align: center;
+  color: #f3c258;
+  border: 1px solid #f3c258;
+  border-radius: 3px;
+  width: 40px;
+  margin-right: 5px;
+}
+body .section1 .wrap1 .news .time li p {
+  width: 230px;
+  font-size: 15px;
+}
+body .section1 .wrap1 .loading {
+  float: right;
+}
+body .section1 .wrap1 .loading .donwload {
+  width: 240px;
+  height: 135px;
+  background: url(../index.png);
+  background-position: 0px -215px;
+}
+body .section1 .wrap1 .loading h3 {
+  width: 240px;
+  height: 110px;
+  background: url(../index.png);
+  background-position: 0px -347px;
+}
+body .section1 .wrap1 .loading h4 {
+  width: 240px;
+  height: 110px;
+  background: url(../index.png);
+  background-position: 0px -457px;
+}
+body .section1 .wrap1 .wran {
+  position: absolute;
+  top: 0;
+  right: -80px;
+}
+body .section1 .wrap1 .wran h6 {
+  margin-top: 5px;
+}
+body .section2 {
+  padding: 30px 0;
+}
+body .section2 .wrap2 {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+body .section2 .wrap2 .card1 {
+  width: 290px;
+  height: 130px;
+  background: url(../q1.jpg);
+}
+body .section2 .wrap2 .card2 {
+  width: 290px;
+  height: 130px;
+  background: url(../q2.png);
+}
+body .section2 .wrap2 .card3 {
+  width: 290px;
+  height: 130px;
+  background: url(../q3.jpg);
+}
+body .section2 .wrap2 .card4 {
+  width: 290px;
+  height: 130px;
+  background: url(../q4.jpg);
+}
+body .section3 {
+  padding: 40px 0;
+}
+body .section3 .wrap3 {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body .section3 .wrap3 .menu {
+  width: 890px;
+  float: left;
+}
+body .section3 .wrap3 .menu .top {
+  overflow: hidden;
+  margin: 10px 0;
+}
+body .section3 .wrap3 .menu .top .left {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+body .section3 .wrap3 .menu .top .left .sprit {
+  background: url(../index.png);
+  width: 30px;
+  height: 35px;
+  background-position: 0 -100px;
+}
+body .section3 .wrap3 .menu .top .left h3 {
+  font-size: x-large;
+  font-weight: bold;
+}
+body .section3 .wrap3 .menu .top .right {
+  float: right;
+  display: flex;
+  margin-top: 5px;
+}
+body .section3 .wrap3 .menu .top .right .sprit {
+  width: 25px;
+  height: 20px;
+  background: url(../index.png);
+  background-position: 155px 5px;
+}
+body .section3 .wrap3 .menu .top .right span {
+  color: #999999;
+}
+body .section3 .wrap3 .menu .nav {
+  background: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .section3 .wrap3 .menu .nav .list {
+  padding: 5px 0;
+  text-align: center;
+  width: 33.33%;
+  border-bottom: 3px solid #f5f5f5;
+  padding-bottom: 5px;
+  cursor: pointer;
+  color: #9999a5;
+}
+body .section3 .wrap3 .menu .nav .list:hover {
+  border-bottom: 3px solid #f3c258;
+  color: #000000;
+}
+body .section3 .wrap3 .menu .nav span {
+  color: #9999a5;
+}
+body .section3 .wrap3 .menu .icon {
+  padding: 10px 0;
+}
+body .section3 .wrap3 .menu .icon span a {
+  background: #f5f5f5;
+  padding: 5px 20px;
+  margin: 0 5px;
+  border-radius: 10px;
+}
+body .section3 .wrap3 .menu .icon span a:hover {
+  background: #f3c259;
+}
+body .section3 .wrap3 .menu .video {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .section3 .wrap3 .menu .video .live {
+  width: 210px;
+  margin-bottom: 15px;
+}
+body .section3 .wrap3 .menu .video .live .photo {
+  position: relative;
+}
+body .section3 .wrap3 .menu .video .live .photo img {
+  width: 210px;
+}
+body .section3 .wrap3 .menu .video .live .photo .line {
+  background: rgba(25, 25, 25, 0.823);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #dcdcde;
+}
+body .section3 .wrap3 .menu .video .live .photo .line .fa {
+  margin-left: 10px;
+  width: 90px;
+}
+body .section3 .wrap3 .skin {
+  width: 290px;
+  float: right;
+}
+body .section3 .wrap3 .skin .top {
+  overflow: hidden;
+  margin: 10px 0;
+}
+body .section3 .wrap3 .skin .top .left {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+body .section3 .wrap3 .skin .top .left .sprit {
+  background: url(../index.png);
+  width: 40px;
+  height: 35px;
+  background-position: 10px -140px;
+}
+body .section3 .wrap3 .skin .top .left span {
+  font-size: large;
+  font-weight: bold;
+}
+body .section3 .wrap3 .skin .top .right {
+  float: right;
+  display: flex;
+  margin-top: 10px;
+}
+body .section3 .wrap3 .skin .top .right .sprit {
+  width: 25px;
+  height: 20px;
+  background: url(../index.png);
+  background-position: 155px 5px;
+}
+body .section3 .wrap3 .skin .top .right span {
+  color: #999999;
+}
+body .section3 .wrap3 .skin .icon {
+  background: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+body .section3 .wrap3 .skin .icon p {
+  width: 33.33%;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 3px solid #f5f5f5;
+}
+body .section3 .wrap3 .skin .icon p a {
+  color: #999999;
+}
+body .section3 .wrap3 .skin .icon p:hover {
+  border-bottom: 3px solid #f3c258;
+}
+body .section3 .wrap3 .skin .icon p:hover a {
+  color: #333333;
+}
+body .section3 .wrap3 .skin .new {
+  padding-bottom: 10px;
+}
+body .section3 .wrap3 .skin .new p {
+  font-size: large;
+  font-weight: bold;
+  margin: 5px 0 5px 10px;
+}
+body .section3 .wrap3 .skin .new span {
+  margin-left: 8px;
+}
+body .section3 .wrap3 .skin .hero {
+  display: flex;
+  justify-content: space-between;
+}
+body .section3 .wrap3 .skin .hero .card {
+  position: relative;
+}
+body .section3 .wrap3 .skin .hero .card img {
+  width: 68px;
+}
+body .section3 .wrap3 .skin .hero .card .mask {
+  visibility: hidden;
+  background: rgba(42, 42, 42, 0.76);
+  width: 68px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f3b63b;
+}
+body .section3 .wrap3 .skin .hero .card:hover .mask {
+  visibility: visible;
+}
+body .section4 .wrap4 {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+body .section4 .wrap4 .game {
+  width: 890px;
+}
+body .section4 .wrap4 .game .top {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .section4 .wrap4 .game .top .left {
+  display: flex;
+  align-items: center;
+}
+body .section4 .wrap4 .game .top .left .sprit {
+  background: url(../index.png);
+  width: 40px;
+  height: 40px;
+  background-position: 0 -175px;
+}
+body .section4 .wrap4 .game .top .left h3 {
+  font-size: x-large;
+  font-weight: bold;
+}
+body .section4 .wrap4 .game .top .right {
+  display: flex;
+  align-items: center;
+}
+body .section4 .wrap4 .game .top .right .sprit {
+  background: url(../index.png);
+  width: 30px;
+  height: 30px;
+  background-position: -245px 8.5px;
+}
+body .section4 .wrap4 .game .top .right span {
+  color: #999999;
+}
+body .section4 .wrap4 .game .nav {
+  margin-bottom: 15px;
+  padding: 0px 0;
+  background: #f5f5f5;
+  display: flex;
+  width: 890px;
+  justify-content: space-between;
+  align-items: center;
+}
+body .section4 .wrap4 .game .nav p {
+  cursor: pointer;
+  padding: 5px 0;
+  text-align: center;
+  width: 33.33%;
+  color: #a599a5;
+  border-bottom: 3px solid #f5f5f5;
+  padding-bottom: 5px;
+}
+body .section4 .wrap4 .game .nav p:hover {
+  color: #000000;
+  border-bottom: 3px solid #f3c258;
+}
+body .section4 .wrap4 .game .nav span {
+  color: #a599a5;
+}
+body .section4 .wrap4 .game .news {
+  display: flex;
+}
+body .section4 .wrap4 .game .news .photo {
+  width: 210px;
+}
+body .section4 .wrap4 .game .news .hot {
+  width: 666px;
+  margin-left: 30px;
+}
+body .section4 .wrap4 .game .news .hot h3 {
+  font-size: x-large;
+}
+body .section4 .wrap4 .game .news .hot h4 {
+  color: #787878;
+  margin-left: 2px;
+}
+body .section4 .wrap4 .game .news .hot .list {
+  margin: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+body .section4 .wrap4 .game .news .hot .list .text {
+  display: flex;
+  align-items: center;
+}
+body .section4 .wrap4 .game .news .hot .list .text p {
+  background: #e3e3e3;
+  border-radius: 30px;
+  padding: 1px 15px;
+  color: #9c9c9c;
+}
+body .section4 .wrap4 .game .news .hot .list .text h5 {
+  margin-left: 20px;
+  font-size: 15px;
+  color: #787878;
+}
+body .section4 .wrap4 .game .news .hot .list span {
+  font-size: 13px;
+  color: #acacac;
+}
+body .section4 .wrap4 .game .view {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+body .section4 .wrap4 .game .view .live {
+  margin-bottom: 30px;
+  width: 210px;
+}
+body .section4 .wrap4 .game .view .live .card {
+  position: relative;
+  width: 210px;
+  cursor: pointer;
+}
+body .section4 .wrap4 .game .view .live .card img {
+  width: 210px;
+  position: relative;
+}
+body .section4 .wrap4 .game .view .live .card .player {
+  width: 210px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.492);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .section4 .wrap4 .game .view .live .card .player p i {
+  margin: 0 5px 0 10px;
+}
+body .section4 .wrap4 .game .view .live .card .player span {
+  font-size: 12px;
+  margin-right: 10px;
+}
+body .section4 .wrap4 .game .view .live h5 {
+  margin-top: 10px;
+  width: 210px;
+  color: #515151;
+}
+body .section4 .wrap4 .kpl {
+  width: 290px;
+}
+body .section4 .wrap4 .kpl .top {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .section4 .wrap4 .kpl .top .left {
+  display: flex;
+  align-items: center;
+}
+body .section4 .wrap4 .kpl .top .left .sprit {
+  background: url(../index.png);
+  width: 40px;
+  height: 40px;
+  background-position: -150px -100px;
+}
+body .section4 .wrap4 .kpl .top .left h3 {
+  font-size: x-large;
+  font-weight: bold;
+}
+body .section4 .wrap4 .kpl .top .buy {
+  display: flex;
+  align-items: center;
+  border: 1px solid gold;
+  border-radius: 5px;
+  position: relative;
+  top: 0;
+  left: 10px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+body .section4 .wrap4 .kpl .top .buy .sprit {
+  background: url(../index.png);
+  width: 20px;
+  height: 20px;
+  background-position: -251px -85px;
+}
+body .section4 .wrap4 .kpl .top .buy h5 {
+  color: #1c1c1c;
+}
+body .section4 .wrap4 .kpl .top .right {
+  display: flex;
+  align-items: center;
+}
+body .section4 .wrap4 .kpl .top .right .sprit {
+  background: url(../index.png);
+  width: 30px;
+  height: 30px;
+  background-position: -245px 8.5px;
+}
+body .section4 .wrap4 .kpl .top .right h5 {
+  color: #999999;
+  font-size: 17px;
+}
+body .section4 .wrap4 .kpl .nav {
+  background: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+body .section4 .wrap4 .kpl .nav .text {
+  width: 25%;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 3px solid #f5f5f5;
+  cursor: pointer;
+  color: #a599a5;
+}
+body .section4 .wrap4 .kpl .nav .text:hover {
+  border-bottom: 3px solid #f3c258;
+  color: #000000;
+}
+body .section4 .wrap4 .kpl .nav span {
+  color: #a599a5;
+}
+body .section4 .wrap4 .kpl .vs .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #c3c3c3;
+}
+body .section4 .wrap4 .kpl .vs .list .time {
+  width: 70px;
+  font-size: 12px;
+}
+body .section4 .wrap4 .kpl .vs .list .army {
+  width: 70px;
+  text-align: center;
+  position: relative;
+  top: -10px;
+  left: 0;
+}
+body .section4 .wrap4 .kpl .vs .list .army img {
+  width: 35%;
+  margin-bottom: 10px;
+}
+body .section4 .wrap4 .kpl .vs .list .army p {
+  font-size: 12px;
+}
+body .section4 .wrap4 .kpl .vs .list span {
+  width: 70px;
+  text-align: center;
+}
+body .section4 .wrap4 .kpl img {
+  width: 100%;
+  margin-top: 20px;
+}
+body .footer {
+  width: 1200px;
+  padding: 50px 0 20px 0;
+  margin: 0 auto;
+}
+body .footer .logo {
+  display: flex;
+}
+body .footer .logo .tencent {
+  width: 290px;
+  height: 60px;
+  background-image: url(../spr1111.png);
+}
+body .footer .logo .timi {
+  width: 65px;
+  height: 60px;
+  background-image: url(../spr1111.png);
+  background-position: -290px 0px;
+}
+body .footer .copy {
+  text-align: center;
+  color: gray;
+  font-size: 18px;
+}
+/*# sourceMappingURL=./7.1.css.map */

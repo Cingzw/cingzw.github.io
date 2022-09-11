@@ -1,42 +1,325 @@
-body {
-  background: #dcdc15;
+* {
+  margin: 0;
+  padding: 0;
 }
-body .view .left {
-  width: 15vw;
-  height: 100vh;
-  background: gray;
+body {
+  background-image: url(../img/bg-2.png);
+}
+body .view {
+  font-family: "宋体";
+  font-family: "仿宋";
+}
+body .view .right {
+  width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+body .view .right .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .view .right .c-bg1 hr {
+  margin: 5rem 0 0rem 0;
+}
+body .view .right .c-bg1 .wrap {
+  width: 250rem;
+  padding: 5rem 0;
+}
+body .view .right .c-bg1 .wrap h2 {
+  margin: 5rem 0;
+  font-size: 7rem;
+  font-weight: 900;
+}
+body .view .right .c-bg1 .wrap h2 span {
+  color: #412c28;
+  margin: 0 3rem;
+}
+body .view .right .c-bg1 .wrap .data {
+  font-size: 5rem;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-evenly;
+  font-weight: 600;
 }
-body .view .left .photo {
-  width: 100%;
-  height: 25vw;
+body .view .right .c-bg1 .wrap .data .photo {
+  width: 80rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 20rem;
 }
-body .view .left .photo img {
-  width: 8vw;
+@keyframes loading8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body .view .right .c-bg1 .wrap .data .photo .fang {
+  position: relative;
+}
+body .view .right .c-bg1 .wrap .data .photo .fang .icon {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+body .view .right .c-bg1 .wrap .data .photo .fang .icon p {
   border-radius: 50%;
 }
-body .view .left .photo h2 {
-  font-size: 30px;
+body .view .right .c-bg1 .wrap .data .photo .fang .two {
+  width: 26rem;
+  height: 26rem;
+  margin: -13rem 0 0 -13rem;
+  border: 0.5rem solid #f200ff;
+  animation: loading8 3s linear 0s infinite reverse;
+}
+body .view .right .c-bg1 .wrap .data .photo .fang .three {
+  width: 23rem;
+  height: 23rem;
+  margin: -11.5rem 0 0 -11.5rem;
+  border: 0.5rem solid #ff8400;
+  animation: loading8 3.3s linear 0s infinite;
+}
+body .view .right .c-bg1 .wrap .data .photo .fang .four {
+  width: 20rem;
+  height: 20rem;
+  margin: -9.25rem 0 0 -9.25rem;
+}
+body .view .right .c-bg1 .wrap .data .photo .fang .four img {
+  width: 20rem;
+  border-radius: 50%;
+}
+body .view .right .c-bg1 .wrap .data .photo h2 {
+  margin-top: 15rem;
+  font-size: 7rem;
   font-weight: 900;
-  color: #29e0e0;
+  color: tomato;
 }
-body .view .left .nav {
-  width: 100%;
+body .view .right .c-bg1 .wrap .data .data1 {
+  width: 127rem;
 }
-body .view .left .nav li {
-  width: 100%;
+body .view .right .c-bg1 .wrap .data .data1 p {
+  margin: 5rem 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+body .view .right .c-bg1 .wrap .data .data2 {
+  width: 137rem;
+}
+body .view .right .c-bg1 .wrap .data .data2 p {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 5rem;
+  margin: 5rem 0;
+}
+body .view .right .c-bg1 .wrap .data .data2 p a:hover {
+  color: tomato;
+}
+body .view .right .c-bg2 hr {
+  margin: 5rem 0 0rem 0;
+}
+body .view .right .c-bg2 .wrap {
+  width: 250rem;
+  overflow: hidden;
+}
+body .view .right .c-bg2 .wrap h2 {
+  margin: 5rem 0;
+  font-size: 7rem;
+  font-weight: 900;
+}
+body .view .right .c-bg2 .wrap h2 span {
+  color: #412c28;
+  margin: 0 3rem;
+}
+body .view .right .c-bg2 .wrap .data {
+  width: 250rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+body .view .right .c-bg2 .wrap .data .study {
+  width: 40rem;
+  margin: 0 2rem;
+  float: left;
   text-align: center;
-  padding: 15px 0;
-  color: azure;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
 }
-body .view .left .nav li:hover {
-  background: #767575;
+body .view .right .c-bg2 .wrap .data .study .rund {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 5px 0 #373737;
+  margin-bottom: 5rem;
+}
+body .view .right .c-bg2 .wrap .data .study .rund .fa {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: all 0.5s;
   cursor: pointer;
+}
+body .view .right .c-bg2 .wrap .data .study .rund .fa:hover {
+  transform: rotate(360deg);
+}
+body .view .right .c-bg2 .wrap .data .study .rund .fa-html {
+  background-image: url(../img/html-icon.png);
+}
+body .view .right .c-bg2 .wrap .data .study .rund .fa-js {
+  background-image: url(../img/js-icon.png);
+}
+body .view .right .c-bg2 .wrap .data .study .rund .fa-jquery {
+  background-image: url(../img/jquery-icon.png);
+}
+body .view .right .c-bg2 .wrap .data .study .rund .fa-CSS3 {
+  background-image: url(../img/CSS3-icon.png);
+}
+body .view .right .c-bg2 .wrap .data .study .rund .fa-BootStrap {
+  background-image: url(../img/BootStrap-icon.png);
+}
+body .view .right .c-bg3 .list {
+  width: 250rem;
+  padding: 5rem 0 10rem 0;
+}
+body .view .right .c-bg3 .list h2 {
+  margin: 5rem 0 0rem 0;
+  font-size: 7rem;
+  font-weight: 900;
+}
+body .view .right .c-bg3 .list h2 span {
+  color: #412c28;
+  margin: 0 3rem;
+}
+body .view .right .c-bg3 .list p {
+  font-size: 5rem;
+  font-weight: bolder;
+  margin: 5rem 0 0rem 11rem;
+}
+body .view .right .c-bg3 .list .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .view .right .c-bg3 .list .cards a {
+  margin: 6rem 11rem 0 11rem;
+  border-radius: 10px;
+  transition: all 0.5s;
+  text-align: center;
+}
+body .view .right .c-bg3 .list .cards a .card {
+  width: 90rem;
+  height: 55rem;
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body .view .right .c-bg3 .list .cards a .title {
+  margin: 3rem 0;
+  font-size: 4rem;
+  font-weight: bold;
+  color: aliceblue;
+  color: darkcyan;
+}
+body .view .right .c-bg3 .list .cards a:hover {
+  transform: scale(1.1);
+}
+body .view .right .c-bg3 .list hr {
+  opacity: 0;
+}
+body .view .right .c-bg3 .list .cards1 .card1 {
+  background-image: url(../img/taobao.png);
+}
+body .view .right .c-bg3 .list .cards1 .card2 {
+  background-image: url(../img/LAWFUL.png);
+}
+body .view .right .c-bg3 .list .cards1 .card3 {
+  background-image: url(../img/Dress-up.png);
+}
+body .view .right .c-bg3 .list .cards1 .card4 {
+  background-image: url(../img/王者荣耀.png);
+}
+body .view .right .c-bg3 .list .cards1 .card5 {
+  background-image: url(../img/360.png);
+}
+body .view .right .c-bg3 .list .cards1 .card6 {
+  background-image: url(../img/kiddy.png);
+}
+body .view .right .c-bg3 .list .cards2 .card1 {
+  background-image: url(../img/time.png);
+}
+body .view .right .c-bg3 .list .cards2 .card2 {
+  background-image: url(../img/踩块块.png);
+}
+body .view .right .c-bg3 .list .cards2 .card3 {
+  background-image: url(../img/放大镜.png);
+}
+body .view .right .c-bg3 .list .cards2 .card4 {
+  background-image: url(../img/手风琴.png);
+}
+body .view .right .c-bg3 .list .cards2 .card5 {
+  background-image: url(../img/double.png);
+}
+body .view .right .c-bg3 .list .cards2 .card6 {
+  background-image: url(../img/打地鼠.png);
+}
+body .view .right .c-bg3 .list .cards2 .card7 {
+  background-image: url(../img/九宫格抽奖.png);
+}
+body .view .right .c-bg3 .list .cards2 .card8 {
+  background-image: url(../img/记忆卡片.png);
+}
+body .view .right .c-bg3 .list .cards3 .card1 {
+  background-image: url(../img/海绵宝宝.png);
+}
+body .view .right .c-bg3 .list .cards3 .card2 {
+  background-image: url(../img/三级联动.png);
+}
+body .view .right .c-bg3 .list .cards4 .card1 {
+  background-image: url(../img/AESTHETIC.png);
+}
+body .view .right .c-bg3 .list .cards4 .card2 {
+  background-image: url(../img/GASLUR.png);
+}
+body .view .right .c-bg3 .list .cards5 .card1 {
+  background-image: url(../img/3d立方体.png);
+}
+body .view .right .c-bg3 .list .cards5 .card2 {
+  background-image: url(../img/3d_horner.png);
+}
+body .view .right .c-bg3 .list .cards5 .card3 {
+  background-image: url(../img/css-2d.png);
+}
+body .view .right .c-bg3 .list .cards6 .card1 {
+  background-image: url(../img/music1.png);
+}
+body .view .right .c-bg3 .list .cards6 .card2 {
+  background-image: url(../img/九宫格.png);
+}
+body .view .right .c-bg4 {
+  padding: 5rem 0;
+  background: #474747;
+}
+body .view .right .c-bg4 p {
+  font-size: 4rem;
+  color: #fff;
+  margin-left: -30rem;
 }
 /*# sourceMappingURL=./index.css.map */

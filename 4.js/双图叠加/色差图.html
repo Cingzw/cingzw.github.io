@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            background: yellow;
+            background: seagreen;
+            background-image: linear-gradient(90deg,seagreen, yellow);
+        }
+        .wrap {
+            width: 1000px;
+            height: 563px;
+            background: url(./img/bw.jpg);
+            margin: 100px auto;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 12px 12px 10px 0 rgb(46, 46, 46);
+        }
+
+        .mask {
+            background: url(./img/color.jpg);
+            width: 500px;
+            height: 100%;
+            position: relative;
+        }
+        p{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(1, 183, 125, 0.7);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin: -25px -25px;
+            font-size: xx-large;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .fa{
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="mask">
+            <p><i class="fa fa-exchange"></i></p>
+        </div>
+    </div>
+
+    <script>
+        var maskEl = document.querySelector(".mask");
+        var wrapEl = document.querySelector(".wrap");
+        var offsetLeft = wrapEl.offsetLeft; // 返回当前元素相对于父级元素(offsetParent) 节点左边界的偏移像素值
+        var sh;
+        wrapEl.onmousedown = function () {
+            wrapEl.onmousemove = function () {
+                // console.log(event.pageX - offsetLeft );
+                var ww = event.pageX - offsetLeft;
+                console.log(ww);
+                maskEl.style.width = ww + "px";
+            }
+        }
+
+        wrapEl.onmouseup = function () {
+            wrapEl.onmousemove = null;
+        }
+        document.body.onmouseup = function () {
+            wrapEl.onmousemove = null;
+        }
+
+    </script>
+</body>
+
+</html>

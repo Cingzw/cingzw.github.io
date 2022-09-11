@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆卡片-Cingzw</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: sandybrown;
+        }
+        .wrap{
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 100px auto;
+        }
+        p{
+            width: 150px;
+            padding: 5px 0;
+            background: skyblue;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        ul.stage {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(101, 100, 100);
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            border-radius: 20px;
+        }
+
+        ul.stage li {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: lightblue;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        ul.stage li:hover{
+            transform: scale(1.05);
+        }
+
+        ul.stage li.open {
+            color: black;
+        }
+
+        ul.stage li.equal {
+            color: black;
+            /* background: rgb(21, 166, 202); */
+            background: tomato;
+        }
+
+        ul.stage li i {
+            font-size: 2.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <P>用时: <span>00:00</span></P>
+        <ul class="stage"></ul>
+    </div>
+    <script>
+        var stage = document.querySelector(".stage");
+        var s = 0;
+        var m = 0;
+        setInterval(function () {
+            s++;
+            // console.log(s);
+            if (s < 10) {
+                s = "0" + s;
+            }
+            document.querySelector("span").innerText = "0" + m + ":" + s;
+            if (s >=59) {
+                s = -1;
+                m++;
+            }
+        },300)
+
+
+        var icons = [
+            "fa-firefox",
+            "fa-tree",
+            "fa-gitlab",
+            "fa-envira",
+            "fa-yelp",
+            "fa-joomla",
+            "fa-plane",
+            "fa-rocket",
+        ];
+        var d = doubleArr(icons);
+        var arr = shuffle(shuffle(d));  //将数组打得更乱,可让卡片游戏增加难度;
+
+        //把一个数组变成 每项都有两个的
+        function doubleArr(arr) {
+            var tmp = [];
+            arr.forEach(function (e) {
+                tmp.push(e);
+                tmp.push(e);
+            });
+            return tmp;
+        }
+
+        //洗牌函数,将卡片打乱
+        function shuffle(arr) {
+            arr.sort(function () {
+                return Math.random() - 0.5;
+            });
+            return arr;
+        }
+
+        //游戏初始化
+        arr.forEach(function (icons) {
+            var node = document.createElement("li");
+            node.innerHTML = '<i class="fa ' + icons + '"></i>';
+            stage.appendChild(node);
+
+            //卡片点击事件
+            node.onclick = function () {
+                if (!this.classList.contains("equal")) {
+                    this.classList.add("open");
+
+                    var openedLis = [];
+                    for (let i = 0; i < stage.children.length; i++) {
+                        if (stage.children[i].classList.contains("open")) {
+                            openedLis.push(stage.children[i]);
+                        }
+                    }
+
+                    //判断open的个数
+                    if (openedLis.length === 2) {
+                        setTimeout(function () {
+                            openedLis[0].classList.remove("open");
+                            openedLis[1].classList.remove("open");
+                            if (openedLis[0].innerHTML === openedLis[1].innerHTML) {
+                                openedLis[0].classList.add("equal");
+                                openedLis[1].classList.add("equal");
+                            }
+                        }, 500);
+                    }
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

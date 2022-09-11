@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/3.6.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="tap">
+            <div class="circle">
+                <div class="photo">
+                    <img src="./img1/1.jpg" alt="">
+                </div>
+                <div class="line">
+                    <img src="./img1/cd-bar.png" alt="">
+                </div>
+
+            </div>
+            <div class="right">
+                <h2></h2>
+                <div class="control">
+                    <div class="icon">
+                        <div class="fa fa-step-backward pre"></div>
+                        <!-- <div class="fa fa-pause center"></div> -->
+                        <div class="fa center">
+                            <div class="fa fa-play"></div>
+                            <div class="fa fa-pause"></div>
+                        </div>
+                        <div class="fa fa-step-forward next"></div>
+                    </div>
+                    <div class="fa fa-volume-up center volume"><span><i></i></span></div>
+                </div>
+                <div class="bar">
+                    <p></p>
+                    <div class="bg start">0:00</div>
+                    <div class="bg end"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio src="./music/无羁（《陈情令》主题曲).mp3" loop></audio>
+
+    <script>
+        var audio = document.querySelector("audio");
+        var center = document.querySelector(".center");
+        var pre = document.querySelector(".pre");
+        var next = document.querySelector(".next");
+        var input = document.querySelector("input");
+        var text = document.querySelector(".right h2");
+        var barEl = document.querySelector(".bar");
+        var volumeEl = document.querySelector(".volume span");
+        var photoimgEl = document.querySelector(".photo img");
+
+        var current = 0;
+        console.log(audio.src);
+
+        // var arr = [
+        //     "./music/yihuik苡慧 - 致你.mp3",
+        //     "./music/以冬 - 罚酒饮得.mp3",
+        //     "./music/王者荣耀 - 无双的王者.mp3",
+        //     "./music/魏小涵 - 心之逆鳞.mp3",
+        //     "./music/我还有点小糊涂.mp3",
+        //     "./music/萌笑宝 - 无羁（《陈情令》主题曲).mp3",
+        //     "./music/杨胖雨 - 羞答答的玫瑰静悄悄地开.mp3",
+        // ];
+        var arr = [
+            "yihuik苡慧 - 致你",
+            "以冬 - 罚酒饮得",
+            "王者荣耀 - 无双的王者",
+            "魏小涵 - 心之逆鳞",
+            "我还有点小糊涂",
+            "无羁（《陈情令》主题曲)",
+            "羞答答的玫瑰静悄悄地开",
+        ];
+
+        var imges = [
+        "./img1/1.jpg",
+        "./img1/2.jpg",
+        "./img1/3.jpg",
+        "./img1/4.jpg",
+        "./img1/5.jpg",
+        "./img1/6.jpg",
+        "./img1/7.jpg",
+        ];
+
+        // 初始化音频为:arr[0];
+        audio.src = "./music/" + arr[0] + ".mp3";
+        text.innerHTML = arr[0];   //优化:截取部分可用内容  
+
+        // 暂停与播放
+        center.onclick = function () {
+            //判断是否有暂停(audio.paused),若有,则audio.play();
+            if (audio.paused) {
+                reOpen();
+                audio.play();   //播放
+                document.querySelector(".fa-play").style.opacity = 0;
+                document.querySelector(".fa-pause").style.opacity = 1;
+                document.querySelector(".line img").style.transform = "rotate(" + 4 + "deg)";
+            } else {
+                audio.pause();  //暂停
+                clearInterval(sh);
+                document.querySelector(".fa-play").style.opacity = 1;
+                document.querySelector(".fa-pause").style.opacity = 0;
+                center.style.color = "lightseagreen";
+                document.querySelector(".line img").style.transform = "rotate(" + -15 + "deg)";
+            }
+        };
+
+        // 上一曲
+        pre.onclick = function () {
+            if (audio.currentTime < 0.01) {
+                reOpen();
+                console.log(audio.currentTime);
+            }
+            current -= 1;
+            if (current < 0) {
+                current = arr.length - 1;
+            }
+            console.log(current);
+            text.innerHTML = arr[current];
+            photoimgEl.src = imges[current];
+            audio.src = "./music/" + arr[current] + ".mp3";
+            // reOpen();
+            audio.play();
+            document.querySelector(".fa-play").style.opacity = 0;
+            document.querySelector(".fa-pause").style.opacity = 1;
+            document.querySelector(".line img").style.transform = "rotate(" + 4 + "deg)";
+        };
+
+        //下一曲
+        next.onclick = function () {
+            if (audio.currentTime < 0.01) {
+                reOpen();
+                console.log(audio.currentTime);
+            }
+            current += 1;
+            if (current >= arr.length) {
+                current = 0;
+            }
+            console.log(current);
+            text.innerHTML = arr[current];
+            photoimgEl.src = imges[current];
+            audio.src = "./music/" + arr[current] + ".mp3";
+            // reOpen();
+            audio.play();
+            document.querySelector(".fa-play").style.opacity = 0;
+            document.querySelector(".fa-pause").style.opacity = 1;
+            document.querySelector(".line img").style.transform = "rotate(" + 4 + "deg)";
+
+        };
+
+        // 鼠标点击样式
+        pre.onmousedown = function () {
+            pre.style.color = "tomato";
+        };
+        pre.onmouseup = function () {
+            pre.style.color = "lightseagreen";
+        };
+        next.onmousedown = function () {
+            next.style.color = "tomato";
+        };
+        next.onmouseup = function () {
+            next.style.color = "lightseagreen";
+        };
+
+        // 当前播放的状态
+        audio.ontimeupdate = function () {
+            var audi = Math.round(audio.currentTime);
+            var dura = Math.round(audio.duration);
+
+            var start_mm = parseInt(audio.currentTime / 60);
+            var start_ss = parseInt(audio.currentTime % 60);
+
+            var end_mm = parseInt(audio.duration / 60);
+            var end_ss = parseInt(audio.duration % 60);
+
+            if (start_mm < 10) {
+                start_mm = "0" + start_mm;
+            }
+            if (start_ss < 10) {
+                start_ss = "0" + start_ss;
+            }
+            if (end_mm < 10) {
+                end_mm = "0" + end_mm;
+            }
+            if (end_ss < 10) {
+                end_ss = "0" + end_ss;
+            }
+
+            document.querySelector("p").style.width = (330 / dura) * audi + "px";
+            document.querySelector(".start").innerHTML = start_mm + ":" + start_ss;
+            if (isNaN(end_ss)) {
+                document.querySelector(".end").innerHTML = "00:00";
+            } else {
+                document.querySelector(".end").innerHTML = end_mm + ":" + end_ss;
+            };
+
+        };
+
+        // 封装图片旋转样式
+        var round = 0;
+        var sh;
+        function reOpen() {
+            sh = setInterval(function () {
+                document.querySelector(".photo").style.transform = "rotate(" + round + "deg)";
+                round++;
+            }, 1000 / 60);
+        };
+
+        // 音量
+        audio.volume = 0.5;    //设置初始音量
+        volumeEl.onmousedown = function (event) {
+            var x = event.offsetX;
+            //总音量为1 / 音量条(span的width) * 鼠标在span上 event.offsetX 的值
+            audio.volume = ((1 / 130) * x).toFixed(2);   //设置音量
+            document.querySelector(".volume span i").style.width = x + "px";
+            volumeEl.onmousemove = function (event2) {
+                var m = event2.offsetX;
+                audio.volume = ((1 / 130) * m).toFixed(2);
+                document.querySelector(".volume span i").style.width = m + "px";
+            }
+            console.log(audio.volume);
+        };
+
+        volumeEl.onmouseup = function () {
+            volumeEl.onmousemove = null;
+        }
+        volumeEl.onmouseup = function () {
+            volumeEl.onmousemove = null;
+        }
+
+        //快进退进度条
+        barEl.onmousedown = function (event) {
+            var rate = event.offsetX;
+            audio.currentTime = (audio.duration / 330) * rate;
+            barEl.onmousemove = function (event) {
+                var rate_x = event.offsetX;
+                //总时长/进度条长度 * 鼠标在bar 上 event.offsetX 的值
+                audio.currentTime = (audio.duration / 330) * rate_x;
+            }
+            if (audio.paused) {
+                reOpen();
+                audio.play();   //播放
+                document.querySelector(".fa-play").style.opacity = 0;
+                document.querySelector(".fa-pause").style.opacity = 1;
+                document.querySelector(".line img").style.transform = "rotate(" + 4 + "deg)";
+            }
+        };
+        barEl.onmouseup = function () {
+            barEl.onmousemove = null;
+        }
+        document.body.onmouseup = function () {
+            barEl.onmousemove = null;
+        }
+
+    </script>
+
+</body>
+
+</html>

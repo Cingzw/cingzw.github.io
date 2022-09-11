@@ -1,0 +1,496 @@
+body {
+  background: #252954;
+}
+body .header .x-container {
+  background: #1f1d2b;
+  color: #fff;
+  padding: 10px 20px 10px 30px;
+  position: relative;
+}
+body .header .x-container .navbar {
+  margin-top: 10px;
+  background: #1f1d2b;
+  height: 50px;
+}
+body .header .x-container .navbar a {
+  line-height: 50px;
+  color: #39d0de;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+}
+body .header .x-container .navbar .navlink .flax {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body .header .x-container .navbar .navlink .flax span {
+  padding-bottom: -3px;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+}
+body .header .x-container .navbar .navlink .flax span:hover {
+  border-bottom: 3px solid #10cce5;
+}
+body .header .x-container .navbar .navlink .flax .view {
+  border-bottom: 3px solid #10cce5;
+}
+body .header .x-container .navbar .btns {
+  line-height: 50px;
+}
+body .header .x-container .navbar .btns .flexbtn {
+  text-align: right;
+  margin: 0 30px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+body .header .x-container .navbar .btns .flexbtn .btn {
+  background: none;
+  color: #fff;
+  outline: none;
+}
+body .header .x-container .navbar .btns .flexbtn .btn1 {
+  margin: 0 15px;
+  border: 1px solid #c9c9c9;
+}
+body .header .x-container .navbar .btns .flexbtn .btn1:hover {
+  border: 1px solid #39d0de;
+}
+body .header .x-container .navbar .btns .flexbtn .btn2 {
+  font-size: 17.5px;
+}
+body .header .x-container .navbar .btns .flexbtn .btn2:hover {
+  color: #39d0de;
+}
+body .header .x-container .navbar .navmini {
+  text-align: right;
+  position: relative;
+  z-index: 999;
+}
+body .header .x-container .navbar .navmini .x-btn {
+  border: none;
+  background: sandybrown;
+  outline: none;
+}
+body .header .x-container .navbar .navmini .x-menu {
+  position: absolute;
+  top: 35px;
+  left: -90px;
+  background: tomato;
+}
+body .header .x-container .navbar .navmini .x-menu li a {
+  font-size: 16px;
+  line-height: 2em;
+}
+body .header .x-container .floatnav {
+  position: relative;
+  display: none;
+  z-index: 9;
+}
+body .header .x-container .floatnav .float-menu {
+  width: 100%;
+  height: 0px;
+  background: #533d8f;
+  border-radius: 10px;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: all 3s;
+}
+body .header .x-container .floatnav .float-menu li {
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+body .header .x-container .floatnav .float-menu li a {
+  width: 100%;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body .header .x-container .floatnav .float-menu li:hover {
+  background: #b8b8b8;
+}
+body .header .x-container .floatnav .float-menu li:hover a {
+  color: #b5003f;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body .header .x-container .mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 27, 27, 0.4);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body .header .x-container .box {
+  padding: 10px 0;
+}
+body .header .x-container .box .infobox {
+  margin-top: 30px;
+}
+body .header .x-container .box .infobox .info1 {
+  width: 550px;
+  font-family: Poppins;
+  color: #FFFFFF;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 70px;
+  letter-spacing: -2px;
+}
+body .header .x-container .box .infobox .info2 {
+  width: 550px;
+  margin: 24px 0;
+  font-family: Poppins;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+body .header .x-container .box .infobox .infobtn {
+  display: flex;
+}
+body .header .x-container .box .infobox .infobtn .infobtn1 {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(103.91deg, #9B51E0 21.01%, rgba(48, 129, 237, 0.8) 100%);
+  padding: 8px 38px;
+  border-radius: 16px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+}
+body .header .x-container .box .infobox .infobtn .infobtn1:hover {
+  color: tomato;
+}
+body .header .x-container .box .infobox .infobtn .infobtn2 {
+  cursor: pointer;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 8px 38px;
+  border: 1px solid #D7D7D7;
+  border-radius: 16px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -1px;
+  color: #fff;
+}
+body .header .x-container .box .infobox .infobtn .infobtn2:hover {
+  border: 1px solid #39d0de;
+  color: #39d0de;
+}
+body .header .x-container .box .display {
+  display: flex;
+  justify-content: right;
+}
+body .header .x-container .box .display .flex {
+  width: 310px;
+  background: #232438;
+  text-align: center;
+  padding: 15px;
+  border-radius: 35px;
+  margin: 30px 10px 0 10px;
+}
+body .header .x-container .box .display .flex img {
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+}
+body .header .x-container .box .display .flex .infowrap {
+  width: 280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+body .header .x-container .box .display .flex .infowrap .info {
+  color: #e5f6fb;
+  display: flex;
+  align-items: center;
+}
+body .header .x-container .box .display .flex .infowrap .info img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+body .header .x-container .box .display .flex .infowrap .info .test {
+  text-align: left;
+  margin-left: 10px;
+}
+body .header .x-container .box .display .flex .infowrap .info2 {
+  color: #e5f6fb;
+}
+body .header .x-container .box .display .flex .infowrap .info2 p {
+  font-size: 10px;
+  font-weight: bold;
+}
+body .header .x-container .box .display .flex .infowrap .info2 .icon {
+  text-align: right;
+}
+body .header .x-container .box .display .flex .infowrap .info2 .icon span {
+  color: #d63232;
+  cursor: pointer;
+}
+body .header .x-container .box .display .flex .infowrap .info2 .icon span:hover {
+  transform: scale(1.1);
+}
+body .header .x-container .auction .title {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 30px 0;
+}
+body .header .x-container .auction .title h2 {
+  margin: 0 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 72px;
+}
+body .header .x-container .auction .title p {
+  font-family: "Poppins";
+  font-style: normal;
+  color: #D7D7D7;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  margin: 0 30px;
+}
+body .header .x-container .auction .nft .item {
+  padding-bottom: 50px;
+}
+body .header .x-container .auction .nft .item .flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .header .x-container .auction .nft .item .flex img {
+  width: 90%;
+  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+body .header .x-container .auction .nft .item .flex img:hover {
+  transform: scale(1.05);
+}
+body .header .x-container .auction .nft .item .flex .text {
+  text-align: center;
+  width: 90%;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+body .header .x-container .auction .nft .item .flex .text p {
+  color: #fff;
+}
+body .header .x-container .auction .nft .item .flex .date {
+  width: 90%;
+  margin: 10px 0;
+  color: #D7D7D7;
+  text-align: left;
+}
+body .header .x-container .started h2 {
+  margin: 20px 0;
+  font-family: "Poppins";
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 72px;
+  text-align: center;
+}
+body .header .x-container .started h5 {
+  text-align: center;
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+  color: #E2E2E2;
+}
+body .header .x-container .started .items {
+  margin: 40px 0 80px 0;
+}
+body .header .x-container .started .items .itemwrap .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+  background-color: red;
+  background: rgba(255, 255, 255, 0.095);
+  box-shadow: inset 2.01px -2.01px 20px rgba(214, 214, 214, 0.17), inset -3.01333px 3.01333px 3.01333px rgba(255, 255, 255, 0.39);
+  backdrop-filter: blur(74.4293px);
+  margin: 10px auto;
+}
+body .header .x-container .started .items .itemwrap .wrap span {
+  font-size: xx-large;
+}
+body .header .x-container .started .items .itemwrap P {
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+body .header .x-container .discover .thistext .flex {
+  margin: 280px 0;
+}
+body .header .x-container .discover .thistext .flex h2 {
+  font-weight: bolder;
+  font-size: x-large;
+  margin: 50px 0 0 20px;
+}
+body .header .x-container .discover .thistext .flex .filters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 50px 0px 0 0px;
+}
+body .header .x-container .discover .thistext .flex .filters .filter {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+body .header .x-container .discover .thistext .flex .filters .filter span {
+  margin: 0 2px;
+}
+body .header .x-container .discover .thistext .flex .filters .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  background: linear-gradient(93.51deg, #9B51E0 2.84%, #3081ED 99.18%);
+  border-radius: 10px;
+  font-family: "Poppins";
+  color: #FFFFFF;
+}
+body .header .x-container .discover .thistext .flex .filters .btn span {
+  padding: 0 10px;
+}
+body .header .x-container .discover .items .item {
+  margin-top: 40px;
+}
+body .header .x-container .discover .items .item .flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .header .x-container .discover .items .item .flex img {
+  width: 90%;
+  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+body .header .x-container .discover .items .item .flex img:hover {
+  transform: scale(1.05);
+}
+body .header .x-container .discover .items .item .flex .text {
+  text-align: center;
+  width: 90%;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+body .header .x-container .discover .items .item .flex .text p {
+  color: #fff;
+}
+body .header .x-container .discover .items .item .flex .date {
+  width: 90%;
+  margin: 10px 0;
+  color: #D7D7D7;
+  text-align: left;
+}
+body .header .x-container .discover .btn button {
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: center;
+  width: 160px;
+  height: 40px;
+  border: 1px solid #D7D7D7;
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #BCBCBC;
+  margin-bottom: 50PX;
+}
+body .header .x-container .magna {
+  height: 1000px;
+}
+body .header .x-container .magna .main p {
+  width: 90%;
+  font-size: 35px;
+  line-height: 40px;
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+body .header .x-container .magna .navgate .navs {
+  display: flex;
+  justify-content: right;
+}
+body .header .x-container .magna .navgate .navs .nav {
+  margin-left: 10%;
+}
+body .header .x-container .magna .navgate .navs .nav h5 {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+body .header .x-container .magna .navgate .navs .nav p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: #D7D7D7;
+}
+body .header .x-container .footer1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=./6.1.css.map */

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-image: url(./3.3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 1s;
+        }
+
+        .wrap {
+            background: rgb(15, 189, 189);
+            width: 400px;
+            /*初始400px*/
+            height: 210px;
+            /*初始210px*/
+            margin: 250px auto;
+            display: flex;
+            box-sizing: border-box;
+            padding: 5px;
+            border-radius: 2px;
+            transform: scale(1.2);
+        }
+
+        .card {
+            width: 30px;
+            height: 100%;
+            background-size: auto 100%;
+            transition: all .3s;
+            cursor: pointer;
+        }
+
+        .card1 {
+            background-image: url(./1.1.jpg);
+        }
+
+        .card2 {
+            background-image: url(./2.2.jpg);
+        }
+
+        .card3 {
+            background-image: url(./3.3.jpg);
+            width: 300px;
+        }
+
+        .card4 {
+            background-image: url(./4.4.jpg);
+        }
+    </style>
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap1 {
+            overflow: hidden;
+            /*超出隐藏*/
+            margin: 50px auto;
+            /*auto默认为居中*/
+            width: 1176px;
+            height: 280px;
+            border: 0px solid rgb(221, 204, 77);
+            /*设置最外边框*/
+        }
+
+        .list {
+            overflow: hidden;
+            position: relative;
+            /*定位功能*/
+            float: left;
+            width: 196px;
+            /*初始为196变成980*/
+            height: 280px;
+            border-left: 0px solid rgb(225, 234, 171);
+            background: rgb(239, 13, 232);
+            transition: 0.5s;
+            /*动画过渡效果时长*/
+        }
+
+        .list-box {
+            float: left;
+            border: 1px solid white;
+            margin-left: 15px;
+            padding: 12px;
+        }
+
+        .list-title {
+            background: rgba(0, 0, 0, 0.5);
+            /*0.5为半透明，也可以写为50%*/
+            color: #fff;
+            text-align: center;
+        }
+
+        .top,
+        .bot {
+            position: absolute;
+            width: 100%;
+            height: 280px;
+            /*由list的280px变为38px*/
+            background: rgba(0, 0, 0, 40%);
+            text-align: center;
+            color: #fff;
+            line-height: 280px;
+            transition: 0.5s;
+        }
+
+        .top {
+            top: 0;
+        }
+
+        .bot {
+            bottom: 0;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 40px 0;
+            width: 980px;
+        }
+
+        .wrap1:hover .list {
+            width: 39.2px;
+            /*此处的值要精确到小数点，不然页面会出现bug*/
+            /*border: 1px solid red;*/
+        }
+
+        .wrap1 .list:hover {
+            /*权重相同时，谁在后面谁生效*/
+            width: 980px;
+            /*border: 1px solid red;*/
+        }
+
+        .list:hover .top,
+        .list:hover .bot {
+            height: 38px;
+            line-height: 38px;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="card card1" id="1"></div>
+        <div class="card card2" id="2"></div>
+        <div class="card card3" id="3"></div>
+        <div class="card card4" id="4"></div>
+    </div>
+    <!-- <div class="wrap1">
+
+        <div class="list" style="background:rgb(218, 75, 75) ;">
+            <div class="content">
+                <div class="list-box">
+                    <div><img src="1.png" alt=""></div>
+                    <div class="list-title">※ 花木兰 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="2.jpg" alt=""></div>
+                    <div class="list-title">※ 凯 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="3.jpg" alt=""></div>
+                    <div class="list-title">※ 云樱 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="4.jpg" alt=""></div>
+                    <div class="list-title">※ 吕布 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="5.jpg" alt=""></div>
+                    <div class="list-title">※ 夏洛特 ※</div>
+                </div>
+            </div>
+
+            <div class="top">战士</div>
+            <div class="bot">战士</div>
+        </div>
+
+        <div class="list" style="background:rgb(154, 213, 77) ;">
+            <div class="content">
+                <div class="list-box">
+                    <div><img src="6.jpg" alt=""></div>
+                    <div class="list-title">※ 猪八戒 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="7.jpg" alt=""></div>
+                    <div class="list-title">※ 亚瑟 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="8.jpg" alt=""></div>
+                    <div class="list-title">※ 廉颇 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="9.jpg" alt=""></div>
+                    <div class="list-title">※ 雅典娜 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="10.jpg" alt=""></div>
+                    <div class="list-title">※ 程咬金 ※</div>
+                </div>
+
+            </div>
+            <div class="top">坦克</div>
+            <div class="bot">坦克</div>
+        </div>
+
+        <div class="list" style="background:rgb(83, 186, 153) ;">
+            <div class="content">
+                <div class="list-box">
+                    <div><img src="11.jpg" alt=""></div>
+                    <div class="list-title">※ 韩信 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="12.jpg" alt=""></div>
+                    <div class="list-title">※ 孙悟空 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="13.jpg" alt=""></div>
+                    <div class="list-title">※ 司马懿 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="14.jpg" alt=""></div>
+                    <div class="list-title">※ 李白 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="15.jpg" alt=""></div>
+                    <div class="list-title">※ 兰陵王 ※</div>
+                </div>
+
+            </div>
+            <div class="top">刺客</div>
+            <div class="bot">刺客</div>
+        </div>
+
+        <div class="list" style="background:rgb(96, 119, 222) ;">
+            <div class="content">
+                <div class="list-box">
+                    <div><img src="16.jpg" alt=""></div>
+                    <div class="list-title">※ 王昭君 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="17.jpg" alt=""></div>
+                    <div class="list-title">※ 杨玉环 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="18.jpg" alt=""></div>
+                    <div class="list-title">※ 周瑜 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="19.jpg" alt=""></div>
+                    <div class="list-title">※ 貂蝉 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="20.jpg" alt=""></div>
+                    <div class="list-title">※ 妲己 ※</div>
+                </div>
+
+            </div>
+            <div class="top">法师</div>
+            <div class="bot">法师</div>
+        </div>
+
+        <div class="list" style="background:rgb(209, 61, 219) ;">
+            <div class="content">
+                <div class="list-box">
+                    <div><img src="21.jpg" alt=""></div>
+                    <div class="list-title">※ 伽罗 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="22.jpg" alt=""></div>
+                    <div class="list-title">※ 鲁班七号 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="23.jpg" alt=""></div>
+                    <div class="list-title">※ 艾琳 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="24.jpg" alt=""></div>
+                    <div class="list-title">※ 百里守约 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="25.jpg" alt=""></div>
+                    <div class="list-title">※ 后羿 ※</div>
+                </div>
+
+            </div>
+            <div class="top">射手</div>
+            <div class="bot">射手</div>
+        </div>
+
+        <div class="list" style="background:rgb(222, 41, 165) ;">
+            <div class="content">
+                <div class="list-box">
+                    <div><img src="26.jpg" alt=""></div>
+                    <div class="list-title">※ 蔡文姬 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="27.jpg" alt=""></div>
+                    <div class="list-title">※ 张飞 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="28.jpg" alt=""></div>
+                    <div class="list-title">※ 明世隐 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="29.jpg" alt=""></div>
+                    <div class="list-title">※ 盾山 ※</div>
+                </div>
+
+                <div class="list-box">
+                    <div><img src="30.jpg" alt=""></div>
+                    <div class="list-title">※ 瑶 ※</div>
+                </div>
+
+            </div>
+            <div class="top">辅助</div>
+            <div class="bot">辅助</div>
+        </div>
+
+
+    </div> -->
+
+    <script>
+        var imgs = document.querySelectorAll(".wrap div");
+
+        imgs.forEach(function (theImg, i) {
+            console.log(theImg, i);
+
+            theImg.onclick = function () {
+                console.log(i);
+                document.body.style.backgroundImage = "url(./" + (i + 1) + "." + (i + 1) + ".jpg)";
+                imgs.forEach(function (el, index) {
+                    if (index === i) {
+                        el.style.width = "300px";
+                    } else {
+                        el.style.width = "30px";
+                    }
+                })
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size:calc(100vw / 375);">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Cing</title>
+    <link rel="stylesheet" href="./style/time.css">
+
+</head>
+
+<body>
+    <section class="time">
+        <div class="left">
+            <!-- 像素时钟 -->
+            <div class="wrap1">
+                <section class="hh">
+                    <div class="xs h1"></div>
+                    <div class="xs h2"></div>
+                </section>
+                <div class="dian">
+                    <p></p>
+                    <p></p>
+                </div>
+                <section class="mm">
+                    <div class="xs m1"></div>
+                    <div class="xs m2"></div>
+                </section>
+                <div class="dian">
+                    <p></p>
+                    <p></p>
+                </div>
+                <section class="ss">
+                    <div class="xs s1"></div>
+                    <div class="xs s2"></div>
+                </section>
+            </div>
+            <!-- 倒计时 -->
+            <div class="wrap2">
+                <div class="box">
+                    <p>倒计时钟</p>
+                    <div class="list">
+                        <span>days</span>
+                        <span>hours</span>
+                        <span>minutes</span>
+                        <span>seconds</span>
+                    </div>
+                    <div class="wrap">
+                        <div class="days">00</div>
+                        <div class="hours">00</div>
+                        <div class="minutes">00</div>
+                        <div class="seconds">00</div>
+                    </div>
+                </div>
+                <div class="mask"></div>
+            </div>
+        </div>
+        <!-- 旋转时钟 -->
+        <div class="wrap3">
+            <div class="stage">
+                <div class="tail">
+                    <p class="b"></p>
+                    <p class="s"></p>
+                </div>
+                <div class="needle">
+                    <div class="icon"></div>
+                    <div class="hh"><p>|</p></div>
+                    <div class="mm"><p>|</p></div>
+                    <div class="ss"><p>|</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 像素时钟 -->
+    <script>
+        var h1 = document.querySelector(".wrap1 .hh .h1");
+        var h2 = document.querySelector(".wrap1 .hh .h2");
+        var m1 = document.querySelector(".wrap1 .mm .m1");
+        var m2 = document.querySelector(".wrap1 .mm .m2");
+        var s1 = document.querySelector(".wrap1 .ss .s1");
+        var s2 = document.querySelector(".wrap1 .ss .s2");
+        console.log(h1, h2, m1, m2, s1, s2);
+
+        var nums = [
+            [   // 数字0
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 0, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+            ],
+            [   // 数字1
+                [0, 0, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+
+                // [0, 1, 0],
+                // [0, 1, 0],
+                // [0, 1, 0],
+                // [0, 1, 0],
+                // [0, 1, 0],
+            ],
+            [   // 数字2
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+                [1, 0, 0],
+                [1, 1, 1],
+            ],
+            [   // 数字3
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+            ],
+            [   // 数字4
+                [1, 0, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+            ],
+            [   // 数字5
+                [1, 1, 1],
+                [1, 0, 0],
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+            ],
+            [   // 数字6
+                [1, 1, 1],
+                [1, 0, 0],
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+            ],
+            [   // 数字7
+                [1, 1, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+                [0, 0, 1],
+            ],
+            [   // 数字8
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+            ],
+            [   // 数字9
+                [1, 1, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+                [0, 0, 1],
+                [1, 1, 1],
+            ],
+        ];
+
+        //初始化时间
+        function start(ele, n) {
+            //外层循环数组
+            nums[n].forEach(function (row, rowi) {
+                //内层数组循环
+                row.forEach(function (item, i) {
+                    //数组内每项都创建i标签
+                    var node = document.createElement("i");
+                    console.log(node);
+                    if (item) {
+                        //内层数组内值为1的添加 active 类名
+                        node.classList.add("active");
+                    }
+                    ele.appendChild(node);
+                })
+            })
+        }
+        // 设置每一项初始值为 0
+        start(h1, 0);//时
+        start(h2, 0);
+        start(m1, 0);//分
+        start(m2, 0);
+        start(s1, 0);//秒
+        start(s2, 0);
+
+        // 显示方法, 传入对应的元素和时间
+        function showNums(element, t) {
+            // 获取元素内所有的 i
+            var dots = element.querySelectorAll("i")
+            nums[t].forEach(function (row, rowi) {
+                row.forEach(function (item, i) {
+                    if (item) {
+                        // 显示的数字所对应的下标,将其添加类名
+                        dots[rowi * 3 + i].classList.add("active");
+                    } else {
+                        // 没有的则移除
+                        dots[rowi * 3 + i].classList.remove("active");
+                    }
+                })
+            })
+        }
+
+        //设置定时器
+        setInterval(function () {
+            var now = new Date();   //获取当前时间
+            var h = String(now.getHours()).padStart(2, "0");     //获取时,并补齐两位数
+            var m = String(now.getMinutes()).padStart(2, "0");   //获取分,并补齐两位数
+            var s = String(now.getSeconds()).padStart(2, "0");   //获取秒,并补齐两位数
+
+            console.log(h, m, s);
+            //将对应的时间,分配到不同的盒子中
+            showNums(h1, h[0]);
+            showNums(h2, h[1]);
+
+            showNums(m1, m[0]);
+            showNums(m2, m[1]);
+
+            showNums(s1, s[0]);
+            showNums(s2, s[1]);
+
+        }, 1000);
+
+    </script>
+    <!-- 倒计时 -->
+    <script>
+        var days = document.querySelector(".days");
+        var hours = document.querySelector(".hours");
+        var minutes = document.querySelector(".minutes");
+        var seconds = document.querySelector(".seconds");
+
+        // 获取2023-06-07的时间戳 写死的
+        var newTimer = +new Date("2023-06-07");
+
+        setInterval(function () {
+            // 每一秒都获取当前的时间戳
+            var currentTimer = Date.now();
+            // console.log(currentTimer);
+
+            // 差值
+            var count = newTimer - currentTimer;
+
+            //天数
+            var days = parseInt(count / 1000 / 60 / 60 / 24)
+            if (days < 10) {
+                days = "0" + days;      //当数字小于10时,在数字前面补0 ,可一直显示两位数
+            }
+            document.querySelector(".days").innerHTML = days;
+
+            // 小时
+            var hours = parseInt(count / 1000 / 60 / 60 % 24);     //一天不能超过24小时,所以 %24 表示 大于24小时 的则余出来
+            // console.log(hours);
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            document.querySelector(".hours").innerHTML = hours;
+
+            //分钟
+            var minutes = parseInt(count / 1000 / 60 % 60);    //一小时不能超过60分钟,所以 %60 表示 大于60分钟 的则余出来
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            document.querySelector(".minutes").innerHTML = minutes;
+
+            //秒数
+            var seconds = parseInt(count / 1000 % 60);
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            document.querySelector(".seconds").innerHTML = seconds;     //一分钟不能超过60秒,所以 %60表示 大于60分钟 的则余出来
+        }, 1000);
+
+
+    </script>
+    <!-- 旋转时钟 -->
+    <script>
+        for (var i = 0; i < 12 * 5; i++) {
+            var node = document.createElement("p");
+            if (i % 5 === 0) {
+                node.className = "b";
+            } else {
+                node.className = "s";
+            }
+            node.style.transform = "rotate(" + i * (360 / (12 * 5)) + "deg)";
+            document.querySelector(".tail").appendChild(node);
+        }
+
+        var hhDom = document.querySelector(".wrap3 .hh");
+        var mmDom = document.querySelector(".wrap3 .mm");
+        var ssDom = document.querySelector(".wrap3 .ss");
+
+        setInterval(function () {
+            var now = new Date();
+            var jj = now.getHours();
+            var yy = now.getMinutes();
+            var xx = now.getSeconds();
+            var du;
+            //每走一小时,转30度
+            var du = jj * 30 + 180 + yy * 0.5;// yy*0.5 表示一分钟,时针加0.5度
+            console.log(du);
+            hhDom.style.transform = "rotate(" + du + "deg)";
+
+            //每走一分钟,转6度
+            var du = yy * 6 + 180 + xx * 0.1;// xx*0.1 表示走一秒钟,分针加0.1度,则走60秒,为6度
+            console.log(du);
+            mmDom.style.transform = "rotate(" + du + "deg)";
+
+            // 每走一秒,转6度
+            var du = xx * 6 + 180;
+            ssDom.style.transform = "rotate(" + du + "deg)";
+        }, 1000);
+    </script>
+</body>
+
+</html>
