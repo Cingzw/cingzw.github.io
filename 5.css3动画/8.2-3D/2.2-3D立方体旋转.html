@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D旋转·立方体</title>
+    <title>3D旋转·立方体-Cingzw</title>
 </head>
 
 <body>
     <div class="three-D">
-        <div class="same front">front <p class="p1"></p></div>
-        <div class="same back">back <p class="p2"></p></div>
-        <div class="same left">left <p class="p3"></p></div>
-        <div class="same right">right <p class="p4"></p></div>
-        <div class="same top">top <p class="p5"></p></div>
-        <div class="same buttom">buttom <p class="p6"></p></div>
+        <div class="same front">front <p class="p1"></p>
+        </div>
+        <div class="same back">back <p class="p2"></p>
+        </div>
+        <div class="same left">left <p class="p3"></p>
+        </div>
+        <div class="same right">right <p class="p4"></p>
+        </div>
+        <div class="same top">top <p class="p5"></p>
+        </div>
+        <div class="same buttom">buttom <p class="p6"></p>
+        </div>
     </div>
 
     <style>
@@ -38,7 +44,8 @@
             left: 0;
             /* 使用3D效果 */
             transform-style: preserve-3d;
-            transform:rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+
         }
 
         .three-D .same {
@@ -52,91 +59,194 @@
             align-items: center;
             transform-style: preserve-3d;
             color: transparent;
+            background-position: center;
+            background-size: contain;
         }
+
+      
+
         @keyframes p {
-            0%{
+            0% {
                 transform: scale(1);
                 transform: translateZ(0px);
                 /* transform: rotate(0); */
             }
-            100%{
+
+            100% {
                 transform: scale(2.5);
                 transform: translateZ(150px);
                 /* transform: rotateX(360deg); */
             }
         }
-        .three-D .same p{
+
+        .three-D .same p {
             width: 200px;
             height: 200px;
             /* background: rgba(255, 99, 71, 0.5); */
             position: absolute;
             top: -16px;
             left: 0px;
-            /* transform: translateZ(100px); */
-            animation: p 1s linear 0s infinite alternate ;
+            background-position: center;
+            background-size: contain;
+            animation: p 2s linear 0s infinite alternate;
         }
 
         .three-D .front {
-            background-color: rgba(255, 99, 71, 0.85);
             transform: translateZ(100px);
         }
-        .p1{
+
+        .three-D .front:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(./img1/1.jpg);
+            background-position: center;
+            background-size: contain;
+            opacity: 0.8;
+        }
+
+        .p1 {
             background-color: rgba(255, 99, 71, 0.85);
+            background-image: url(./img1/1.jpg);
+            opacity: 0.8;
         }
 
         .three-D .back {
-            background-color: rgba(135, 207, 235, 0.85);
             transform: rotateY(180deg) translateZ(100px);
         }
-        .p2{
-            background-color: rgba(135, 207, 235, 0.85);
+        .three-D .back:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(./img1/2.jpg);
+            background-position: center;
+            background-size: contain;
+            opacity: 0.8;
+        }
+        .p2 {
+            background: url(./img1/2.jpg);
+            opacity: 0.8;
         }
 
         .three-D .left {
-            background-color: rgba(153, 205, 50, 0.85);
             transform: rotateY(-90deg) translateZ(100px);
         }
-        .p3{
-            background-color: rgba(153, 205, 50, 0.85);
+        .three-D .left:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(./img1/3.jpeg);
+            background-position: center;
+            background-size: contain;
+            opacity: 0.8;
+        }
+
+        .p3 {
+            background: url(./img1/3.jpeg);
+            opacity: 0.8;
         }
 
         .three-D .right {
-            background-color: rgba(0, 255, 255, 0.85);
             transform: rotateY(90deg) translateZ(100px);
         }
-        .p4{
-            background-color: rgba(0, 255, 255, 0.85);
+        .three-D .right:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(./img1/4.jpg);
+            background-position: center;
+            background-size: contain;
+            opacity: 0.8;
         }
-        
+
+        .p4 {
+            background: url(./img1/4.jpg);
+            opacity: 0.8;
+        }
+
 
         .three-D .top {
-            background-color: rgba(255, 0, 234, 0.85);
             transform: rotateX(90deg) translateZ(100px);
         }
-        .p5{
-            background-color: rgba(255, 0, 234, 0.85);
+        .three-D .top:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(./img1/5.jpg);
+            background-position: center;
+            background-size: contain;
+            opacity: 0.8;
+        }
+
+        .p5 {
+            background: url(./img1/5.jpg);
+            opacity: 0.8;
         }
 
         .three-D .buttom {
-            background-color: rgba(255, 0, 106, 0.85);
             transform: rotateX(-90deg) translateZ(100px);
         }
-        .p6{
-            background-color: rgba(255, 0, 106, 0.85);
+        .three-D .buttom:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(./img1/6.jpg);
+            background-position: center;
+            background-size: contain;
+            /* opacity: 0.8; */
         }
 
-        
+        .p6 {
+            background: url(./img1/6.jpg);
+            opacity: 0.8;
+        }
     </style>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <SCript>
         var i = 0;
         setInterval(function () {
-            $(".three-D").css({ transform: "rotateY(" + i + "deg)" + " " + "rotateX(" + i + "deg)"});
+            $(".three-D").css({ transform: "rotateY(" + 0.9*i + "deg)" + " " + "rotateX(" + -1.2*i + "deg)" });
             i += 0.5;
-            if (i >= 360) {
-                i = 0;
-            }
+            // if (i >= 1080) {
+            //     i = 0;
+            // }
         }, 1000 / 60);
     </SCript>
 </body>

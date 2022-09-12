@@ -50,10 +50,36 @@ body .view .c-bg1 .wrap .data .photo {
 }
 @keyframes loading8 {
   0% {
-    transform: rotate(0deg);
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1);
+  }
+}
+@keyframes loading81 {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 body .view .c-bg1 .wrap .data .photo .fang {
@@ -73,23 +99,28 @@ body .view .c-bg1 .wrap .data .photo .fang .two {
   height: 26rem;
   margin: -13rem 0 0 -13rem;
   border: 0.5rem solid #f200ff;
-  animation: loading8 3s linear 0s infinite reverse;
+  animation: loading8 2.8s linear 0s infinite reverse;
 }
 body .view .c-bg1 .wrap .data .photo .fang .three {
   width: 23rem;
   height: 23rem;
   margin: -11.5rem 0 0 -11.5rem;
   border: 0.5rem solid #ff8400;
-  animation: loading8 3.3s linear 0s infinite;
+  animation: loading81 3.3s linear 0s infinite;
 }
 body .view .c-bg1 .wrap .data .photo .fang .four {
   width: 20rem;
   height: 20rem;
   margin: -9.25rem 0 0 -9.25rem;
+  transition: all 1s;
+  cursor: pointer;
 }
 body .view .c-bg1 .wrap .data .photo .fang .four img {
   width: 20rem;
   border-radius: 50%;
+}
+body .view .c-bg1 .wrap .data .photo .fang .four:hover {
+  transform: rotate(360deg);
 }
 body .view .c-bg1 .wrap .data .photo h2 {
   margin-top: 15rem;
@@ -186,7 +217,7 @@ body .view .c-bg2 .wrap .data .study .rund .fa-jquery {
   background-image: url(../img/jquery-icon.png);
 }
 body .view .c-bg2 .wrap .data .study .rund .fa-CSS3 {
-  background-image: url(../img/CSS3-icon.png);
+  background-image: url(../img/css3-icon.png);
 }
 body .view .c-bg2 .wrap .data .study .rund .fa-BootStrap {
   background-image: url(../img/BootStrap-icon.png);
@@ -296,13 +327,16 @@ body .view .c-bg3 .list .cards4 .card2 {
   background-image: url(../img/GASLUR.png);
 }
 body .view .c-bg3 .list .cards5 .card1 {
-  background-image: url(../img/3d立方体.png);
+  background-image: url(../img/3d立方体1.png);
 }
 body .view .c-bg3 .list .cards5 .card2 {
   background-image: url(../img/3d_horner.png);
 }
 body .view .c-bg3 .list .cards5 .card3 {
   background-image: url(../img/css-2d.png);
+}
+body .view .c-bg3 .list .cards5 .card4 {
+  background-image: url(../img/文字渐变.png);
 }
 body .view .c-bg3 .list .cards6 .card1 {
   background-image: url(../img/music1.png);

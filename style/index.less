@@ -58,7 +58,6 @@ body {
 
                     .photo {
                         width: 80rem;
-                        // background: tomato;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -67,14 +66,38 @@ body {
 
                         @keyframes loading8 {
                             0% {
-                                transform: rotate(0deg);
+                                transform: scale(1);
                             }
-
+                            25% {
+                                transform: scale(1.1);
+                            }
+                            50% {
+                                transform: scale(1);
+                            }
+                            50% {
+                                transform: scale(0.85);
+                            }
                             100% {
-                                transform: rotate(360deg);
+                                transform: scale(1);
                             }
                         }
-
+                        @keyframes loading81 {
+                            0% {
+                                transform: scale(1);
+                            }
+                            25% {
+                                transform: scale(1.15);
+                            }
+                            50% {
+                                transform: scale(1);
+                            }
+                            50% {
+                                transform: scale(0.9);
+                            }
+                            100% {
+                                transform: scale(1);
+                            }
+                        }
 
                         .fang {
                             position: relative;
@@ -84,8 +107,6 @@ body {
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
-                                // border-top: 1rem solid transparent;
-
                                 p {
                                     border-radius: 50%;
                                 }
@@ -96,17 +117,7 @@ body {
                                 height: 26rem;
                                 margin: -13rem 0 0 -13rem;
                                 border: 0.5rem solid rgb(242, 0, 255);
-                                animation: loading8 3s linear 0s infinite reverse;
-
-                                // p {
-                                //     width: 26.25rem;
-                                //     height: 26.25rem;
-                                //     border-top: 1rem solid rgb(242, 0, 255);
-                                //     border-right: 1rem solid transparent;
-                                //     border-bottom: 1rem solid transparent;
-                                //     border-left: 1rem solid transparent;
-                                //     transform: rotate(50deg);
-                                // }
+                                animation: loading8 2.8s linear 0s infinite reverse;
 
                             }
 
@@ -115,27 +126,22 @@ body {
                                 height: 23rem;
                                 margin: -11.5rem 0 0 -11.5rem;
                                 border: 0.5rem solid rgb(255, 132, 0);
-                                animation: loading8 3.3s linear 0s infinite;
+                                animation: loading81 3.3s linear 0s infinite;
 
-                                // p {
-                                //     width: 22.25rem;
-                                //     height: 22.25rem;
-                                //     border-top: 1rem solid rgb(255, 132, 0);
-                                //     border-right: 1rem solid transparent;
-                                //     border-bottom: 1rem solid transparent;
-                                //     border-left: 1rem solid transparent;
-                                //     transform: rotate(130deg);
-                                // }
                             }
 
                             .four {
                                 width: 20rem;
                                 height: 20rem;
                                 margin: -9.25rem 0 0 -9.25rem;
-
+                                transition: all 1s;
+                                cursor: pointer;
                                 img {
                                     width: 20rem;
                                     border-radius: 50%;
+                                }
+                                &:hover{
+                                    transform: rotate(360deg);
                                 }
                             }
                         }
@@ -150,8 +156,6 @@ body {
 
                     .data1 {
                         width: 127rem;
-
-                        // background: salmon;
                         p {
                             margin: 5rem 0;
                             display: flex;
@@ -266,7 +270,7 @@ body {
                             }
 
                             .fa-CSS3 {
-                                background-image: url(../img/CSS3-icon.png);
+                                background-image: url(../img/css3-icon.png);
                             }
 
                             .fa-BootStrap {
@@ -450,7 +454,7 @@ body {
 
                     // background: rgb(182, 66, 193);
                     .card1 {
-                        background-image: url(../img/3d立方体.png);
+                        background-image: url(../img/3d立方体1.png);
 
                     }
 
@@ -461,6 +465,10 @@ body {
 
                     .card3 {
                         background-image: url(../img/css-2d.png);
+
+                    }
+                    .card4 {
+                        background-image: url(../img/文字渐变.png);
 
                     }
                 }
