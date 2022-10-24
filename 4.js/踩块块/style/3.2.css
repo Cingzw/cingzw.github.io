@@ -3,6 +3,7 @@
   padding: 0;
 }
 body .wrap {
+  -webkit-tap-highlight-color: transparent;
   box-shadow: 0 0 20px 0 black;
   width: 800px;
   margin: 30px auto;
@@ -14,7 +15,6 @@ body .wrap .nav {
   justify-content: space-evenly;
 }
 body .wrap .nav span {
-  background: #2c88e2;
   color: #fff;
   padding: 10px;
 }

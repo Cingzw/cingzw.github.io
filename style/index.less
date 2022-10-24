@@ -6,6 +6,7 @@
 body {
     // background: rgb(220, 220, 21);
     background-image: url(../img/bg-2.png);
+    -webkit-tap-highlight-color: transparent;
 
     .view {
         font-family: "宋体";
@@ -32,7 +33,7 @@ body {
             }
 
             .wrap {
-                width: 250rem;
+                width: 280rem;
                 // background: rgb(255, 0, 123);
                 // background: rgba(255, 0, 0, 0.2);
                 padding: 5rem 0;
@@ -193,7 +194,7 @@ body {
             }
 
             .wrap {
-                width: 250rem;
+                width: 280rem;
                 // background: rgb(255, 232, 62);
                 // background: rgba(255, 225, 0, 0.581);
                 overflow: hidden;
@@ -210,7 +211,7 @@ body {
                 }
 
                 .data {
-                    width: 250rem;
+                    width: 280rem;
                     display: flex;
                     justify-content: space-between;
                     flex-wrap: nowrap;
@@ -276,6 +277,9 @@ body {
                             .fa-BootStrap {
                                 background-image: url(../img/BootStrap-icon.png);
                             }
+                            .fa-Vue {
+                                background-image: url(../img/Vue-icon.png);
+                            }
 
                         }
                     }
@@ -289,7 +293,7 @@ body {
             // flex-direction: column;
 
             .list {
-                width: 250rem;
+                width: 280rem;
                 // background-color: darkcyan;
                 // background-color: rgba(0, 115, 115, 0.3);
                 padding: 5rem 0 10rem 0;
@@ -316,10 +320,10 @@ body {
                 .cards {
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
+                    justify-content: space-between;
 
                     a {
-                        margin: 6rem 11rem 0 11rem;
+                        margin: 6rem 20rem 0 20rem;
                         border-radius: 10px;
                         // position: relative;
                         // top: 0;
@@ -330,10 +334,11 @@ body {
                         .card {
                             width: 90rem;
                             height: 55rem;
-                            border-radius: 10px;
+                            border-radius: 5px;
                             background-size: cover;
                             background-repeat: no-repeat;
                             background-position: center;
+                            box-shadow: 0rem 0rem 5rem rgb(212, 212, 212);
                         }
 
                         .title {
@@ -358,6 +363,21 @@ body {
                 }
 
                 // 静态页面
+                .cards-Vue {
+                    // background: seashell;
+
+                    .card1 {
+                        background-image: url(../img/mogu.png);
+
+                    }
+
+                    .card2 {
+                        background-image: url(../img/LAWFUL.png)
+                    }
+
+                }
+
+
                 .cards1 {
                     // background: seashell;
 
@@ -498,6 +518,5 @@ body {
                 margin-left: -30rem;
             }
         }
-
     }
 }

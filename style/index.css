@@ -4,6 +4,7 @@
 }
 body {
   background-image: url(../img/bg-2.png);
+  -webkit-tap-highlight-color: transparent;
 }
 body .view {
   font-family: "宋体";
@@ -21,7 +22,7 @@ body .view .c-bg1 hr {
   margin: 5rem 0 0rem 0;
 }
 body .view .c-bg1 .wrap {
-  width: 250rem;
+  width: 280rem;
   padding: 5rem 0;
 }
 body .view .c-bg1 .wrap h2 {
@@ -152,7 +153,7 @@ body .view .c-bg2 hr {
   margin: 5rem 0 0rem 0;
 }
 body .view .c-bg2 .wrap {
-  width: 250rem;
+  width: 280rem;
   overflow: hidden;
 }
 body .view .c-bg2 .wrap h2 {
@@ -165,7 +166,7 @@ body .view .c-bg2 .wrap h2 span {
   margin: 0 3rem;
 }
 body .view .c-bg2 .wrap .data {
-  width: 250rem;
+  width: 280rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -222,8 +223,11 @@ body .view .c-bg2 .wrap .data .study .rund .fa-CSS3 {
 body .view .c-bg2 .wrap .data .study .rund .fa-BootStrap {
   background-image: url(../img/BootStrap-icon.png);
 }
+body .view .c-bg2 .wrap .data .study .rund .fa-Vue {
+  background-image: url(../img/Vue-icon.png);
+}
 body .view .c-bg3 .list {
-  width: 250rem;
+  width: 280rem;
   padding: 5rem 0 10rem 0;
 }
 body .view .c-bg3 .list h2 {
@@ -243,10 +247,10 @@ body .view .c-bg3 .list p {
 body .view .c-bg3 .list .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 body .view .c-bg3 .list .cards a {
-  margin: 6rem 11rem 0 11rem;
+  margin: 6rem 20rem 0 20rem;
   border-radius: 10px;
   transition: all 0.5s;
   text-align: center;
@@ -254,10 +258,11 @@ body .view .c-bg3 .list .cards a {
 body .view .c-bg3 .list .cards a .card {
   width: 90rem;
   height: 55rem;
-  border-radius: 10px;
+  border-radius: 5px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 0rem 0rem 5rem #d4d4d4;
 }
 body .view .c-bg3 .list .cards a .title {
   margin: 3rem 0;
@@ -271,6 +276,12 @@ body .view .c-bg3 .list .cards a:hover {
 }
 body .view .c-bg3 .list hr {
   opacity: 0;
+}
+body .view .c-bg3 .list .cards-Vue .card1 {
+  background-image: url(../img/mogu.png);
+}
+body .view .c-bg3 .list .cards-Vue .card2 {
+  background-image: url(../img/LAWFUL.png);
 }
 body .view .c-bg3 .list .cards1 .card1 {
   background-image: url(../img/taobao.png);
